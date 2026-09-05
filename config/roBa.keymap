@@ -30,29 +30,29 @@
     combos {
         compatible = "zmk,combos";
 
-        tab {
-            bindings = <&kp TAB>;
-            key-positions = <11 12>;
+        left-click {
+            bindings = <&mkp LCLK>;
+            key-positions = <18 19>;
         };
 
-        shift_tab {
-            bindings = <&kp LS(TAB)>;
-            key-positions = <12 13>;
+        middle-click {
+            bindings = <&mkp MCLK>;
+            key-positions = <18 19 20>;
         };
 
-        muhennkann {
-            bindings = <&to_layer_0 INT_MUHENKAN>;
-            key-positions = <11 10>;
+        right-click {
+            bindings = <&mkp RCLK>;
+            key-positions = <19 20>;
         };
 
-        double_quotation {
-            bindings = <&kp DOUBLE_QUOTES>;
-            key-positions = <20 21>;
+        prev-click {
+            bindings = <&mkp MB4>;
+            key-positions = <30 31>;
         };
 
-        eq {
-            bindings = <&kp EQUAL>;
-            key-positions = <24 25>;
+        next-click {
+            bindings = <&mkp MB5>;
+            key-positions = <31 32>;
         };
     };
 
