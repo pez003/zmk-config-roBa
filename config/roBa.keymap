@@ -10,6 +10,13 @@
     quick-tap-ms = <0>;
 };
 
+&msc {
+    delay-ms = <0>;
+    trigger-period-ms = <10>;
+    time-to-max-speed-ms = <0>;
+    acceleration-exponent = <0>;
+};
+
 &trackball {
     scroll-layers = <5>;
 
@@ -80,7 +87,7 @@
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
             bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
-            tap-ms = <150>;
+            tap-ms = <20>;
         };
     };
 
