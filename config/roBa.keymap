@@ -119,12 +119,12 @@
             >;
         };
 
-        ARROW {
+        ARROW-NUM {
             bindings = <
-&kp ESCAPE  &kp LC(LS(TAB))  &kp UP_ARROW    &kp LC(TAB)              &trans                       &trans    &trans               &kp UP_ARROW    &trans           &trans
-&kp HOME    &kp LEFT_ARROW   &kp DOWN_ARROW  &kp RIGHT_ARROW          &kp END  &trans      &trans  &kp HOME  &kp LEFT_ARROW       &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp END
-&trans      &trans           &trans          &kp LG(LS(RIGHT_ARROW))  &trans   &trans      &trans  &trans    &kp LS(LC(LA(TAB)))  &kp LG(D)       &kp LC(LA(TAB))  &trans
-&trans      &trans           &trans          &trans                   &trans   &trans      &trans  &trans                                                          &trans
+&kp KP_ASTERISK  &kp LC(LS(KP_NUMBER_1))  &kp KP_NUMBER_2  &kp LC(KP_NUMBER_3)  &kp KP_PLUS                           &trans    &trans               &kp UP_ARROW    &trans           &trans
+&kp KP_NUMBER_0  &kp KP_NUMBER_4          &kp KP_NUMBER_5  &kp KP_NUMBER_6      &kp KP_MINUS  &trans          &trans  &kp HOME  &kp LEFT_ARROW       &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp END
+&kp SLASH        &kp KP_NUMBER_7          &kp KP_NUMBER_8  &kp KP_NUMBER_9      &kp KP_EQUAL  &kp KP_DOT      &trans  &trans    &kp LS(LC(LA(TAB)))  &kp LG(D)       &kp LC(LA(TAB))  &trans
+&trans           &trans                   &trans           &trans               &trans        &trans          &trans  &trans                                                          &trans
             >;
 
             sensor-bindings = <&inc_dec_kp LC(PAGE_UP) LC(PAGE_DOWN)>;
