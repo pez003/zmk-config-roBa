@@ -54,6 +54,11 @@
             bindings = <&mkp MB5>;
             key-positions = <31 32>;
         };
+
+        sleep {
+            bindings = <&kp K_SLEEP>;
+            key-positions = <41 42>;
+        };
     };
 
     macros {
