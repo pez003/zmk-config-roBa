@@ -93,7 +93,7 @@
         default_layer {
             bindings = <
 &kp Q    &kp L        &kp U           &kp COMMA         &kp PERIOD                                                      &kp F            &kp W              &kp R            &kp Y        &kp P
-&lt 3 E  &mt LCTRL I  &mt LEFT_ALT A  &mt LEFT_SHIFT O  &mt LEFT_WIN MINUS  &kp KP_NUMBER_1            &kp KP_NUMBER_3  &mt LEFT_WIN K   &mt RIGHT_SHIFT T  &mt RIGHT_ALT N  &mt RCTRL S  &lt 3 H
+&lt 3 E  &mt LCTRL I  &mt LEFT_ALT A  &mt LEFT_SHIFT O  &mt LEFT_WIN MINUS  &mkp MCLK                  &kp KP_NUMBER_3  &mt LEFT_WIN K   &mt RIGHT_SHIFT T  &mt RIGHT_ALT N  &mt RCTRL S  &lt 3 H
 &kp Z    &kp X        &kp C           &kp V             &kp QUESTION        &kp KP_NUMBER_2            &kp KP_NUMBER_4  &mt RIGHT_WIN G  &mt RIGHT_SHIFT D  &kp M            &kp J        &kp B
 &trans   &trans       &trans          &kp TAB           &lt 4 BACKSPACE     &mt LEFT_SHIFT DELETE      &lt 2 ENTER      &lt 1 SPACE                                                       &kp ESCAPE
             >;
@@ -103,10 +103,10 @@
 
         ARROW-NUM {
             bindings = <
-&kp KP_ASTERISK  &kp LC(LS(KP_NUMBER_1))  &kp KP_NUMBER_2  &kp LC(KP_NUMBER_3)  &kp KP_PLUS                                &trans    &trans               &kp UP_ARROW    &trans           &trans
-&kp KP_NUMBER_0  &kp KP_NUMBER_4          &kp KP_NUMBER_5  &kp KP_NUMBER_6      &kp KP_MINUS       &trans          &trans  &kp HOME  &kp LEFT_ARROW       &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp END
-&kp SLASH        &kp KP_NUMBER_7          &kp KP_NUMBER_8  &kp KP_NUMBER_9      &kp KP_EQUAL       &kp KP_DOT      &trans  &trans    &kp LS(LC(LA(TAB)))  &kp LG(D)       &kp LC(LA(TAB))  &trans
-&trans           &trans                   &trans           &kp LANGUAGE_5       &kp LANG_HIRAGANA  &trans          &trans  &trans                                                          &kp K_SLEEP
+&kp KP_ASTERISK  &kp LC(LS(KP_NUMBER_1))  &kp KP_NUMBER_2  &kp LC(KP_NUMBER_3)  &kp KP_PLUS                           &trans    &trans               &kp UP_ARROW    &trans           &trans
+&kp KP_NUMBER_0  &kp KP_NUMBER_4          &kp KP_NUMBER_5  &kp KP_NUMBER_6      &kp KP_MINUS  &trans          &trans  &kp HOME  &kp LEFT_ARROW       &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp END
+&kp SLASH        &kp KP_NUMBER_7          &kp KP_NUMBER_8  &kp KP_NUMBER_9      &kp KP_EQUAL  &kp KP_DOT      &trans  &trans    &kp LS(LC(LA(TAB)))  &kp LG(D)       &kp LC(LA(TAB))  &trans
+&trans           &trans                   &trans           &kp LANGUAGE_5       &kp INT_KANA  &trans          &trans  &trans                                                          &kp K_SLEEP
             >;
 
             sensor-bindings = <&inc_dec_kp LC(PAGE_UP) LC(PAGE_DOWN)>;
@@ -123,13 +123,13 @@
 
         SCROLL {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                      &trans      &trans             &trans  &trans           &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &kp K_MUTE  &kp C_VOLUME_DOWN  &trans  &kp C_VOLUME_UP  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans      &trans             &trans  &trans           &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &kp TAB                                                 &trans
+&trans  &trans  &trans  &trans  &trans                          &trans   &trans             &trans      &trans           &trans
+&trans  &trans  &trans  &trans  &trans  &kp C_MUTE      &trans  &trans   &kp C_VOLUME_DOWN  &kp C_MUTE  &kp C_VOLUME_UP  &trans
+&trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans   &trans             &trans      &trans           &trans
+&trans  &trans  &trans  &trans  &trans  &trans          &trans  &kp TAB                                                  &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
+            sensor-bindings = <&inc_dec_kp C_VOLUME_DOWN C_VOLUME_UP>;
         };
 
         NUM {
