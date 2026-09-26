@@ -81,6 +81,11 @@
             bindings = <&mkp MB5>;
             key-positions = <31 32>;
         };
+
+        task-view {
+            bindings = <&kp LG(TAB)>;
+            key-positions = <30 31 32>;
+        };
     };
 
     macros {
@@ -132,7 +137,7 @@
             bindings = <
 &kp ASTERISK  &kp N1        &kp N2        &kp N3        &kp PLUS                           &trans    &trans               &kp UP_ARROW    &trans           &trans
 &kp NUMBER_0  &kp N4        &kp NUMBER_5  &kp N6        &kp MINUS  &trans          &trans  &kp HOME  &kp LEFT_ARROW       &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp END
-&kp SLASH     &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp EQUAL  &kp KP_DOT      &trans  &trans    &kp LS(LC(LA(TAB)))  &kp LG(D)       &kp LC(LA(TAB))  &trans
+&kp KP_SLASH  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp EQUAL  &kp KP_DOT      &trans  &trans    &kp LS(LC(LA(TAB)))  &kp LG(D)       &kp LC(LA(TAB))  &trans
 &trans        &trans        &trans        &kp LANG2     &kp LANG1  &trans          &trans  &trans                                                          &kp K_SLEEP
             >;
 
@@ -141,10 +146,10 @@
 
         window-control {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                      &trans  &trans              &kp LG(UP_ARROW)    &trans               &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &kp LG(LEFT_ARROW)  &kp LG(DOWN_ARROW)  &kp LG(RIGHT_ARROW)  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans              &kp LG(D)           &trans               &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                                               &trans
+&trans  &trans  &trans  &trans  &trans                      &trans  &trans                      &kp LG(LA(LC(UP_ARROW)))    &trans                       &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &kp LG(LC(LA(LEFT_ARROW)))  &kp LG(LC(LA(DOWN_ARROW)))  &kp LG(LC(LA(RIGHT_ARROW)))  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans                      &kp LG(D)                   &trans                       &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                                                                       &trans
             >;
         };
 
