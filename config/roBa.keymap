@@ -47,7 +47,7 @@
             <&kp LG(UP_ARROW)>,
             <&kp LG(DOWN_ARROW)>;
 
-        tick = <30>;
+        tick = <100>;
         wait-ms = <300>;
         tap-ms = <5>;
     };
