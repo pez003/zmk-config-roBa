@@ -6,6 +6,7 @@
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 65
 
 // OS設定を日本語キーボードのまま使うための変換定義（出典: note.com/kloir_z/n/n314e739f03a1）
+
 #define JP_DQUOTE       AT                // "
 #define JP_AMPERSAND    CARET             // &
 #define JP_QUOTE        AMPERSAND         // '
@@ -37,6 +38,7 @@
 
     // レイヤー2(window-control)中にボールを転がすとウィンドウ操作
     // 並び順: 右, 左, 上, 下
+
     gesture {
         layers = <2>;
         bindings =
@@ -44,6 +46,7 @@
             <&kp LG(LEFT_ARROW)>,
             <&kp LG(UP_ARROW)>,
             <&kp LG(DOWN_ARROW)>;
+
         tick = <30>;
         wait-ms = <300>;
         tap-ms = <5>;
@@ -116,10 +119,10 @@
 
         default_layer {
             bindings = <
-&kp Q    &kp L        &kp U           &kp COMMA         &kp PERIOD                                                      &kp F           &kp W              &kp R            &kp Y        &kp P
-&lt 3 E  &mt LCTRL I  &mt LEFT_ALT A  &mt LEFT_SHIFT O  &mt LEFT_WIN MINUS  &mkp MCLK                  &kp KP_NUMBER_3  &mt LEFT_WIN K  &mt RIGHT_SHIFT T  &mt RIGHT_ALT N  &mt RCTRL S  &lt 3 H
-&kp Z    &kp X        &kp C           &kp V             &kp QUESTION        &kp KP_NUMBER_2            &kp KP_NUMBER_4  &kp G           &kp D              &kp M            &kp J        &kp B
-&trans   &trans       &trans          &kp TAB           &lt 4 BACKSPACE     &mt LEFT_SHIFT DELETE      &lt 2 ENTER      &lt 1 SPACE                                                      &kp ESCAPE
+&kp Q    &kp L   &kp U   &kp COMMA  &kp PERIOD                                                   &kp F        &kp W  &kp R  &kp Y  &kp P
+&lt 3 E  &kp I   &kp A   &kp O      &kp MINUS        &mkp MCLK                  &kp KP_NUMBER_3  &kp K        &kp T  &kp N  &kp S  &lt 3 H
+&kp Z    &kp X   &kp C   &kp V      &kp QUESTION     &kp KP_NUMBER_2            &kp KP_NUMBER_4  &kp G        &kp D  &kp M  &kp J  &kp B
+&trans   &trans  &trans  &kp TAB    &lt 4 BACKSPACE  &mt LEFT_SHIFT DELETE      &lt 2 ENTER      &lt 1 SPACE                       &kp ESCAPE
             >;
 
             sensor-bindings = <&encoder_msc_down_up>;
@@ -127,10 +130,10 @@
 
         ARROW-NUM {
             bindings = <
-&kp KP_ASTERISK  &kp LC(LS(KP_NUMBER_1))  &kp KP_NUMBER_2  &kp LC(KP_NUMBER_3)  &kp KP_PLUS                           &trans    &trans               &kp UP_ARROW    &trans           &trans
-&kp KP_NUMBER_0  &kp KP_NUMBER_4          &kp KP_NUMBER_5  &kp KP_NUMBER_6      &kp KP_MINUS  &trans          &trans  &kp HOME  &kp LEFT_ARROW       &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp END
-&kp SLASH        &kp KP_NUMBER_7          &kp KP_NUMBER_8  &kp KP_NUMBER_9      &kp KP_EQUAL  &kp KP_DOT      &trans  &trans    &kp LS(LC(LA(TAB)))  &kp LG(D)       &kp LC(LA(TAB))  &trans
-&trans           &trans                   &trans           &kp LANGUAGE_5       &kp INT_KANA  &trans          &trans  &trans                                                          &kp K_SLEEP
+&kp ASTERISK  &kp N1        &kp N2        &kp N3          &kp PLUS                              &trans    &trans               &kp UP_ARROW    &trans           &trans
+&kp NUMBER_0  &kp N4        &kp NUMBER_5  &kp N6          &kp MINUS     &trans          &trans  &kp HOME  &kp LEFT_ARROW       &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp END
+&kp SLASH     &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9    &kp EQUAL     &kp KP_DOT      &trans  &trans    &kp LS(LC(LA(TAB)))  &kp LG(D)       &kp LC(LA(TAB))  &trans
+&trans        &trans        &trans        &kp LANGUAGE_5  &kp INT_KANA  &trans          &trans  &trans                                                          &kp K_SLEEP
             >;
 
             sensor-bindings = <&inc_dec_kp LC(PAGE_UP) LC(PAGE_DOWN)>;
@@ -158,10 +161,10 @@
 
         NUM {
             bindings = <
-&kp JP_ASTERISK     &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp JP_PLUS                                                 &kp JP_CARET         &kp JP_AMPERSAND      &kp JP_TILDE       &kp JP_LPAREN  &kp JP_RPAREN
-&kp KP_NUMBER_0  &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp MINUS   &kp LC(LA(KP_NUMBER_0))      &kp JP_UNDERSCORE  &kp EXCLAMATION   &kp JP_AT        &kp HASH        &kp DOLLAR            &kp PERCENT
-&kp SLASH        &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp PERIOD  &kp JP_EQUAL                    &trans          &kp JP_LBRACKET  &kp JP_RBRACKET  &kp JP_LBRACE  &kp JP_RBRACE       &kp JP_YEN
-&trans           &trans           &trans           &trans           &trans      &trans                       &trans          &trans                                                                     &kp JP_PIPE
+&kp JP_ASTERISK  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp JP_PLUS                                                  &kp JP_CARET     &kp JP_AMPERSAND  &kp JP_TILDE   &kp JP_LPAREN  &kp JP_RPAREN
+&kp KP_NUMBER_0  &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp MINUS    &kp LC(LA(KP_NUMBER_0))      &kp JP_UNDERSCORE  &kp EXCLAMATION  &kp JP_AT         &kp HASH       &kp DOLLAR     &kp PERCENT
+&kp SLASH        &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp PERIOD   &kp JP_EQUAL                 &trans             &kp JP_LBRACKET  &kp JP_RBRACKET   &kp JP_LBRACE  &kp JP_RBRACE  &kp JP_YEN
+&trans           &trans           &trans           &trans           &trans       &trans                       &trans             &trans                                                           &kp JP_PIPE
             >;
         };
 
