@@ -84,6 +84,13 @@
             bindings = <&to 0 &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
             label = "TO_LAYER_0";
         };
+
+        kakko: kakko {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_PARENTHESIS &kp RIGHT_PARENTHESIS &kp LEFT_ARROW>;
+            label = "KAKKO";
+        };
     };
 
     behaviors {
@@ -129,7 +136,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TD_V";
             #binding-cells = <0>;
-            bindings = <&mt LEFT_SHIFT V>, <&kp LC(V)>;
+            bindings = <&mt LEFT_SHIFT V>, <&kp LC(V)>, <&kp LG(V)>;
         };
 
         td_x: td_x {
@@ -151,6 +158,13 @@
             label = "TD_QUESTION";
             #binding-cells = <0>;
             bindings = <&kp QUESTION>, <&kp LS(NUMBER_1)>;
+        };
+
+        td_comma: td_comma {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_COMMA";
+            #binding-cells = <0>;
+            bindings = <&kp COMMA>, <&kakko>;
         };
     };
 
