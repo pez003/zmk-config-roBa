@@ -117,6 +117,34 @@
 
             tap-ms = <20>;
         };
+
+        td_c: td_c {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_C";
+            #binding-cells = <0>;
+            bindings = <&kp C>, <&kp LC(C)>;
+        };
+
+        td_v: td_v {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_V";
+            #binding-cells = <0>;
+            bindings = <&kp V>, <&kp LC(V)>;
+        };
+
+        td_x: td_x {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_X";
+            #binding-cells = <0>;
+            bindings = <&kp X>, <&kp LC(X)>;
+        };
+
+        td_z: td_z {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_Z";
+            #binding-cells = <0>;
+            bindings = <&kp Z>, <&kp LC(Z)>, <&kp LC(Y)>;
+        };
     };
 
     keymap {
@@ -126,7 +154,7 @@
             bindings = <
 &kp Q    &kp L   &kp U   &kp COMMA  &kp PERIOD                                                      &kp F        &kp W  &kp R    &kp Y    &kp P
 &lt 3 E  &kp I   &kp A   &kp O      &kp MINUS           &mkp MCLK                  &kp LC(LS(TAB))  &kp K        &kp T  &lt 2 N  &lt 1 S  &lt 3 H
-&kp Z    &kp X   &kp C   &kp V      &kp QUESTION        &kp KP_NUMBER_2            &kp LC(TAB)      &kp G        &kp D  &kp M    &kp J    &kp B
+&td_z    &td_x   &td_c   &td_v      &kp QUESTION        &kp KP_NUMBER_2            &kp LC(TAB)      &kp G        &kp D  &kp M    &kp J    &kp B
 &trans   &trans  &trans  &kp TAB    &lt_bs 4 BACKSPACE  &mt LEFT_SHIFT DELETE      &lt 2 ENTER      &lt 1 SPACE                           &kp ESCAPE
             >;
 
