@@ -132,7 +132,7 @@
             bindings = <
 &kp ASTERISK  &kp N1        &kp N2        &kp N3        &kp PLUS                           &trans    &trans               &kp UP_ARROW    &trans           &trans
 &kp NUMBER_0  &kp N4        &kp NUMBER_5  &kp N6        &kp MINUS  &trans          &trans  &kp HOME  &kp LEFT_ARROW       &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp END
-&kp KP_SLASH  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp EQUAL  &kp KP_DOT      &trans  &trans    &kp LS(LC(LA(TAB)))  &kp LG(D)       &kp LC(LA(TAB))  &trans
+&kp KP_SLASH  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp EQUAL  &kp KP_DOT      &trans  &trans    &kp LS(LC(LA(TAB)))  &kp A           &kp LC(LA(TAB))  &trans
 &trans        &trans        &trans        &kp LANG2     &kp LANG1  &trans          &trans  &trans                                                          &kp K_SLEEP
             >;
 
