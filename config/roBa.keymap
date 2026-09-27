@@ -10,6 +10,10 @@
     quick-tap-ms = <0>;
 };
 
+// エンコーダー: 1周12カチッ → 1カチッ=1入力
+&left_encoder { steps = <48>; };
+&sensors { triggers-per-rotation = <12>; };
+
 &trackball {
     scroll-layers = <3>;
 
