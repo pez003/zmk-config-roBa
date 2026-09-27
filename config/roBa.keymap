@@ -81,11 +81,6 @@
             bindings = <&mkp MB5>;
             key-positions = <31 32>;
         };
-
-        task-view {
-            bindings = <&kp LG(TAB)>;
-            key-positions = <30 31 32>;
-        };
     };
 
     macros {
