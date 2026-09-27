@@ -166,6 +166,20 @@
             #binding-cells = <0>;
             bindings = <&kp COMMA>, <&kakko>;
         };
+
+        td_plus_astrisk: td_plus_astrisk {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_PLUS_ASTRISK";
+            #binding-cells = <0>;
+            bindings = <&kp PLUS>, <&kp ASTRK>;
+        };
+
+        td_minus_slash: td_minus_slash {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_MINUS_SLASH";
+            #binding-cells = <0>;
+            bindings = <&kp MINUS>, <&kp SLASH>;
+        };
     };
 
     keymap {
@@ -215,10 +229,10 @@
 
         NUM {
             bindings = <
-&kp ASTERISK     &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp PLUS                                                 &kp CARET         &kp AMPERSAND      &kp TILDE       &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS
-&kp KP_NUMBER_0  &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp MINUS   &kp LC(LA(KP_NUMBER_0))      &kp UNDERSCORE  &kp EXCLAMATION   &kp AT_SIGN        &kp HASH        &kp DOLLAR            &kp PERCENT
-&kp SLASH        &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp PERIOD  &kp EQUAL                    &trans          &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp LEFT_BRACE  &kp RIGHT_BRACE       &kp BACKSLASH
-&trans           &trans           &trans           &trans           &trans      &trans                       &trans          &trans                                                                     &kp PIPE
+&kp ASTERISK     &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp PLUS                                                   &kp EQUAL   &kp N1  &kp N2        &kp N3  &none
+&kp KP_NUMBER_0  &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp MINUS   &kp LC(LA(KP_NUMBER_0))      &td_plus_astrisk  &kp COMMA   &kp N4  &kp NUMBER_5  &kp N6  &kp N0
+&kp SLASH        &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp PERIOD  &kp EQUAL                    &td_minus_slash   &kp PERIOD  &kp N7  &kp N8        &kp N9  &none
+&trans           &trans           &trans           &trans           &trans      &trans                       &trans            &trans                                    &none
             >;
         };
 
