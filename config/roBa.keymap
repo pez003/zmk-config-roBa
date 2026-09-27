@@ -70,6 +70,11 @@
             bindings = <&mkp MB5>;
             key-positions = <31 32>;
         };
+
+        new-tab {
+            bindings = <&kp LC(T)>;
+            key-positions = <16 28>;
+        };
     };
 
     macros {
