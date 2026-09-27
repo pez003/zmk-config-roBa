@@ -145,6 +145,13 @@
             #binding-cells = <0>;
             bindings = <&kp Z>, <&kp LC(Z)>, <&kp LC(Y)>;
         };
+
+        td_question: td_question {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_QUESTION";
+            #binding-cells = <0>;
+            bindings = <&kp QUESTION>, <&kp LS(NUMBER_1)>;
+        };
     };
 
     keymap {
@@ -154,7 +161,7 @@
             bindings = <
 &kp Q    &kp L   &kp U   &kp COMMA  &kp PERIOD                                                      &kp F        &kp W  &kp R    &kp Y    &kp P
 &lt 3 E  &kp I   &kp A   &kp O      &kp MINUS           &mkp MCLK                  &kp LC(LS(TAB))  &kp K        &kp T  &lt 2 N  &lt 1 S  &lt 3 H
-&td_z    &td_x   &td_c   &td_v      &kp QUESTION        &kp KP_NUMBER_2            &kp LC(TAB)      &kp G        &kp D  &kp M    &kp J    &kp B
+&td_z    &td_x   &td_c   &td_v      &td_question        &kp KP_NUMBER_2            &kp LC(TAB)      &kp G        &kp D  &kp M    &kp J    &kp B
 &trans   &trans  &trans  &kp TAB    &lt_bs 4 BACKSPACE  &mt LEFT_SHIFT DELETE      &lt 2 ENTER      &lt 1 SPACE                           &kp ESCAPE
             >;
 
