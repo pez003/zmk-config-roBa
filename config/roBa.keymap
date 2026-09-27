@@ -24,7 +24,7 @@
             <&kp LC(LA(LG(UP_ARROW)))>,
             <&kp LC(LA(LG(DOWN_ARROW)))>;
 
-        tick = <200>;
+        tick = <150>;
         wait-ms = <300>;
         tap-ms = <5>;
     };
