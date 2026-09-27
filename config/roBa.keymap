@@ -108,8 +108,8 @@
         default_layer {
             bindings = <
 &kp Q    &kp L   &kp U   &kp COMMA  &kp PERIOD                                                      &kp F        &kp W  &kp R    &kp Y  &kp P
-&lt 3 E  &kp I   &kp A   &kp O      &kp MINUS           &mkp MCLK                  &kp KP_NUMBER_3  &kp K        &kp T  &lt 2 N  &kp S  &lt 3 H
-&kp Z    &kp X   &kp C   &kp V      &kp QUESTION        &kp KP_NUMBER_2            &kp KP_NUMBER_4  &kp G        &kp D  &kp M    &kp J  &kp B
+&lt 3 E  &kp I   &kp A   &kp O      &kp MINUS           &mkp MCLK                  &kp LC(LS(TAB))  &kp K        &kp T  &lt 2 N  &kp S  &lt 3 H
+&kp Z    &kp X   &kp C   &kp V      &kp QUESTION        &kp KP_NUMBER_2            &kp LC(TAB)      &kp G        &kp D  &kp M    &kp J  &kp B
 &trans   &trans  &trans  &kp TAB    &lt_bs 4 BACKSPACE  &mt LEFT_SHIFT DELETE      &lt 2 ENTER      &lt 1 SPACE                         &kp ESCAPE
             >;
 
@@ -120,7 +120,7 @@
             bindings = <
 &kp ASTERISK  &kp N1        &kp N2        &kp N3        &kp PLUS                           &trans    &trans          &kp UP_ARROW    &trans           &trans
 &kp NUMBER_0  &kp N4        &kp NUMBER_5  &kp N6        &kp MINUS  &trans          &trans  &kp HOME  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp END
-&kp KP_SLASH  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp EQUAL  &kp KP_DOT      &trans  &trans    &trans          &trans          &trans           &trans
+&kp KP_SLASH  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp EQUAL  &kp KP_DOT      &trans  &trans    &kp C_VOL_DN    &kp K_MUTE      &kp C_VOLUME_UP  &trans
 &trans        &trans        &trans        &kp LANG2     &kp LANG1  &trans          &trans  &trans                                                     &kp K_SLEEP
             >;
 
