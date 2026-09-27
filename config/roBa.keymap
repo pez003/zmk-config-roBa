@@ -224,7 +224,7 @@
 &none         &kp N1        &kp N2        &kp N3        &kp EQUAL                                    &kp LG(LA(R))   &kp C_BRI_DN    &kp UP_ARROW    &kp C_BRI_UP     &kp LG(PRINTSCREEN)
 &kp NUMBER_0  &kp N4        &kp NUMBER_5  &kp N6        &td_plus_astrisk  &trans             &trans  &kp HOME        &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp END
 &none         &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &td_minus_slash   &td_comma_dot      &trans  &kp LC(LA(N4))  &kp C_VOL_DN    &kp C_MUTE      &kp C_VOLUME_UP  &kp LC(LA(N3))
-&trans        &trans        &trans        &kp LANG2     &kp LANG1         &trans             &trans  &trans                                                           &sleep
+&trans        &trans        &trans        &kp LANG2     &kp LANG1         &trans             &trans  &trans                                                           &kp C_SLEEP_MODE
             >;
 
             sensor-bindings = <&inc_dec_kp LC(PAGE_UP) LC(PAGE_DOWN)>;
