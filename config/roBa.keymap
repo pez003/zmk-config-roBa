@@ -114,6 +114,13 @@
             bindings = <&kp S &kp H>;
             label = "SH_GOBAKU_TAISAKU";
         };
+
+        aa: td_aa {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp A &kp A>;
+            label = "TD_AA";
+        };
     };
 
     behaviors {
@@ -209,6 +216,13 @@
             label = "TD_COMMA_DOT";
             #binding-cells = <0>;
             bindings = <&kp COMMA>, <&kp DOT>;
+        };
+
+        td_a: td_a {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_A";
+            #binding-cells = <0>;
+            bindings = <&kp A>, <&aa>, <&kp LC(A)>;
         };
     };
 
