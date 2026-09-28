@@ -81,6 +81,16 @@
             bindings = <&kp LC(T)>;
             key-positions = <16 28>;
         };
+
+        LANG_1 {
+            bindings = <&kp LANG1>;
+            key-positions = <19 20 41>;
+        };
+
+        LANG_2 {
+            bindings = <&kp LANG2>;
+            key-positions = <12 11 38>;
+        };
     };
 
     macros {
