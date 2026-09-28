@@ -107,6 +107,13 @@
 
             label = "SLEEP";
         };
+
+        sh_gobaku_taisaku: sh_gobaku_taisaku {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp S &kp H>;
+            label = "SH_GOBAKU_TAISAKU";
+        };
     };
 
     behaviors {
@@ -262,7 +269,7 @@
         layer5 {
             bindings = <
 &trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &none   &none   &none   &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &none   &none   &none   &sh_gobaku_taisaku
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                          &trans
             >;
