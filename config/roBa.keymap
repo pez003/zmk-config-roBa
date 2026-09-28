@@ -226,12 +226,12 @@
             sensor-bindings = <&encoder_msc_down_up>;
         };
 
-        ARROW-NUM {
+        NUM_ARROW {
             bindings = <
-&none         &kp N1        &kp N2        &kp N3        &kp EQUAL                                    &kp LG(LA(R))   &kp C_BRI_DN    &kp UP_ARROW    &kp C_BRI_UP     &kp LG(PRINTSCREEN)
-&kp NUMBER_0  &kp N4        &kp NUMBER_5  &kp N6        &td_plus_astrisk  &trans             &trans  &kp HOME        &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp END
-&none         &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &td_minus_slash   &td_comma_dot      &trans  &kp LC(LA(N4))  &kp C_VOL_DN    &kp C_MUTE      &kp C_VOLUME_UP  &kp LC(LA(N3))
-&trans        &trans        &trans        &kp LANG2     &kp LANG1         &trans             &trans  &trans                                                           &sleep
+&none         &kp N1        &kp N2        &kp N3        &td_comma_dot                            &kp LG(LA(R))   &kp C_BRI_DN    &kp UP_ARROW    &kp C_BRI_UP     &kp LG(PRINTSCREEN)
+&kp NUMBER_0  &kp N4        &kp NUMBER_5  &kp N6        &td_plus_astrisk  &trans         &trans  &kp HOME        &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp END
+&none         &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &td_minus_slash   &kp EQUAL      &trans  &kp LC(LA(N4))  &kp C_VOL_DN    &kp C_MUTE      &kp C_VOLUME_UP  &kp LC(LA(N3))
+&trans        &trans        &trans        &kp LANG2     &kp LANG1         &trans         &trans  &trans                                                           &sleep
             >;
 
             sensor-bindings = <&inc_dec_kp LC(PAGE_UP) LC(PAGE_DOWN)>;
@@ -257,12 +257,12 @@
             sensor-bindings = <&inc_dec_kp C_VOLUME_DOWN C_VOLUME_UP>;
         };
 
-        NUM {
+        ARROW_NUM {
             bindings = <
-&none            &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &none                                                     &none          &kp N1  &kp N2        &kp N3  &none
-&kp KP_NUMBER_0  &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp MINUS  &kp LC(LA(KP_NUMBER_0))      &td_plus_astrisk  &kp EQUAL      &kp N4  &kp NUMBER_5  &kp N6  &kp N0
-&none            &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &none      &kp EQUAL                    &td_minus_slash   &td_comma_dot  &kp N7  &kp N8        &kp N9  &none
-&trans           &trans           &trans           &trans           &trans     &trans                       &trans            &trans                                       &none
+&kp LG(PRINTSCREEN)  &kp C_BRI_DN    &kp UP_ARROW    &kp C_BRI_UP     &kp LG(LA(R))                                           &td_comma_dot     &kp N1  &kp N2        &kp N3  &none
+&kp HOME             &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp END         &kp LC(LA(KP_NUMBER_0))      &none      &td_plus_astrisk  &kp N4  &kp NUMBER_5  &kp N6  &kp N0
+&kp LC(LA(N4))       &kp C_VOL_DN    &kp C_MUTE      &kp C_VOLUME_UP  &kp LC(LA(N3))  &kp EQUAL                    &kp EQUAL  &td_minus_slash   &kp N7  &kp N8        &kp N9  &none
+&trans               &trans          &trans          &trans           &trans          &trans                       &trans     &trans                                          &none
             >;
         };
 
