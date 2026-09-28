@@ -152,28 +152,28 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TD_C";
             #binding-cells = <0>;
-            bindings = <&mt LEFT_ALT C>, <&kp LC(C)>;
+            bindings = <&mt LEFT_SHIFT C>, <&kp LC(C)>;
         };
 
         td_v: td_v {
             compatible = "zmk,behavior-tap-dance";
             label = "TD_V";
             #binding-cells = <0>;
-            bindings = <&mt LEFT_SHIFT V>, <&kp LC(V)>, <&kp LG(V)>;
+            bindings = <&mt LEFT_WIN V>, <&kp LC(V)>, <&kp LG(V)>;
         };
 
         td_x: td_x {
             compatible = "zmk,behavior-tap-dance";
             label = "TD_X";
             #binding-cells = <0>;
-            bindings = <&mt LCTRL X>, <&kp LC(X)>;
+            bindings = <&mt LEFT_ALT X>, <&kp LC(X)>;
         };
 
         td_z: td_z {
             compatible = "zmk,behavior-tap-dance";
             label = "TD_Z";
             #binding-cells = <0>;
-            bindings = <&mt LEFT_WIN Z>, <&kp LC(Z)>, <&kp LC(Y)>;
+            bindings = <&mt LCTRL Z>, <&kp LC(Z)>, <&kp LC(Y)>;
         };
 
         td_question: td_question {
@@ -217,16 +217,16 @@
 
         default_layer {
             bindings = <
-&lt 7 Q  &kp L   &kp U   &td_comma_kakko  &kp PERIOD                                                      &kp F        &kp W              &kp R            &kp Y        &kp P
-&kp E    &kp I   &kp A   &kp O            &kp MINUS           &mkp MCLK                  &kp LC(LS(TAB))  &kp K        &kp T              &lt 2 N          &lt 5 S      &lt 3 H
-&td_z    &td_x   &td_c   &td_v            &td_question        &none                      &kp LC(TAB)      &kp G        &mt RIGHT_SHIFT D  &mt RIGHT_ALT M  &mt RCTRL J  &mt RIGHT_WIN B
-&trans   &trans  &trans  &kp TAB          &lt_bs 4 BACKSPACE  &mt LEFT_SHIFT DELETE      &lt 4 ENTER      &lt 1 SPACE                                                   &kp ESCAPE
+&lt 7 Q  &kp L   &kp U   &td_comma_kakko  &kp PERIOD                                                      &kp F        &kp W            &kp R              &kp Y            &kp P
+&kp E    &kp I   &kp A   &kp O            &kp MINUS           &mkp MCLK                  &kp LC(LS(TAB))  &kp K        &kp T            &lt 2 N            &lt 5 S          &lt 3 H
+&td_z    &td_x   &td_c   &td_v            &td_question        &none                      &kp LC(TAB)      &kp G        &mt RIGHT_WIN D  &mt RIGHT_SHIFT M  &mt RIGHT_ALT J  &mt RCTRL B
+&trans   &trans  &trans  &kp TAB          &lt_bs 4 BACKSPACE  &mt LEFT_SHIFT DELETE      &lt 4 ENTER      &lt 1 SPACE                                                       &kp ESCAPE
             >;
 
             sensor-bindings = <&encoder_msc_down_up>;
         };
 
-        NUM_ARROW {
+        NUM_and_ARROW {
             bindings = <
 &none         &kp N1        &kp N2        &kp N3        &td_comma_dot                            &kp LG(LA(R))   &kp C_BRI_DN    &kp UP_ARROW    &kp C_BRI_UP     &kp LG(PRINTSCREEN)
 &kp NUMBER_0  &kp N4        &kp NUMBER_5  &kp N6        &td_plus_astrisk  &trans         &trans  &kp HOME        &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp END
@@ -246,18 +246,16 @@
             >;
         };
 
-        SCROLL {
+        SCROLL_and_TAB {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                          &trans   &trans             &trans      &trans           &trans
-&trans  &trans  &trans  &trans  &trans  &kp C_MUTE      &trans  &trans   &kp C_VOLUME_DOWN  &kp C_MUTE  &kp C_VOLUME_UP  &trans
-&trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans   &trans             &trans      &trans           &trans
-&trans  &trans  &trans  &trans  &trans  &trans          &trans  &kp TAB                                                  &trans
+&none  &none  &none  &none  &none                    &none    &none  &none  &none  &none
+&none  &none  &none  &none  &none  &none      &none  &none    &none  &none  &none  &none
+&none  &none  &none  &none  &none  &none      &none  &none    &none  &none  &none  &none
+&none  &none  &none  &none  &none  &none      &none  &kp TAB                       &none
             >;
-
-            sensor-bindings = <&inc_dec_kp C_VOLUME_DOWN C_VOLUME_UP>;
         };
 
-        ARROW_NUM {
+        ARROW_and_NUM {
             bindings = <
 &kp LG(PRINTSCREEN)  &kp C_BRI_DN    &kp UP_ARROW    &kp C_BRI_UP     &kp LG(LA(R))                                           &td_comma_dot     &kp N1  &kp N2        &kp N3  &none
 &kp HOME             &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp END         &kp LC(LA(KP_NUMBER_0))      &none      &td_plus_astrisk  &kp N4  &kp NUMBER_5  &kp N6  &kp N0
@@ -266,7 +264,7 @@
             >;
         };
 
-        layer5 {
+        tb_zoom {
             bindings = <
 &trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &none   &none   &none   &sh_gobaku_taisaku
