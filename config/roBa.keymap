@@ -220,7 +220,7 @@
 &lt 7 Q  &kp L   &kp U   &td_comma_kakko  &kp PERIOD                                                      &kp F        &kp W            &kp R              &kp Y            &kp P
 &kp E    &kp I   &kp A   &kp O            &kp MINUS           &mkp MCLK                  &kp LC(LS(TAB))  &kp K        &kp T            &lt 2 N            &lt 5 S          &lt 3 H
 &td_z    &td_x   &td_c   &td_v            &td_question        &none                      &kp LC(TAB)      &kp G        &mt RIGHT_WIN D  &mt RIGHT_SHIFT M  &mt RIGHT_ALT J  &mt RCTRL B
-&trans   &trans  &trans  &kp TAB          &lt_bs 4 BACKSPACE  &mt LEFT_SHIFT DELETE      &lt 4 ENTER      &lt 1 SPACE                                                       &kp ESCAPE
+&trans   &trans  &trans  &kp TAB          &lt_bs 4 BACKSPACE  &mt LEFT_SHIFT DELETE      &lt 8 ENTER      &lt 1 SPACE                                                       &kp ESCAPE
             >;
 
             sensor-bindings = <&encoder_msc_down_up>;
@@ -237,7 +237,7 @@
             sensor-bindings = <&inc_dec_kp LC(PAGE_UP) LC(PAGE_DOWN)>;
         };
 
-        window-control {
+        TB_window-control {
             bindings = <
 &trans  &trans  &trans  &trans  &trans                      &trans  &trans       &trans  &trans     &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &kp LG(TAB)  &trans  &kp LG(D)  &trans
@@ -246,7 +246,7 @@
             >;
         };
 
-        SCROLL_and_TAB {
+        TB_SCROLL_and_TAB {
             bindings = <
 &none  &none  &none  &none  &none                    &none    &none  &none  &none  &none
 &none  &none  &none  &none  &none  &none      &none  &none    &none  &none  &none  &none
@@ -288,6 +288,15 @@
 &trans  &trans  &trans  &trans  &trans  &trans      &trans       &trans  &bt BT_SEL 3  &bt BT_SEL 4  &trans        &trans
 &trans  &none   &none   &none   &trans  &trans      &bootloader  &trans  &trans        &trans        &trans        &bt BT_CLR
 &trans  &trans  &trans  &trans  &trans  &trans      &trans       &trans                                            &bt BT_CLR_ALL
+            >;
+        };
+
+        setting {
+            bindings = <
+&kp  &kp  &kp  &kp  &kp                &kp             &kp           &kp         &kp           &kp
+&kp  &kp  &kp  &kp  &kp  &kp      &kp  &kp LC(LA(N4))  &kp C_VOL_DN  &kp C_MUTE  &kp C_VOL_UP  &kp LC(LA(N3))
+&kp  &kp  &kp  &kp  &kp  &kp      &kp  &kp             &kp           &kp         &kp           &kp
+&kp  &kp  &kp  &kp  &kp  &kp      &kp  &kp                                                     &kp
             >;
         };
     };
