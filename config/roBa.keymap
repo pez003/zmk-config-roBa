@@ -293,10 +293,10 @@
 
         setting {
             bindings = <
-&kp  &kp  &kp  &kp  &kp                &kp             &kp           &kp         &kp           &kp
-&kp  &kp  &kp  &kp  &kp  &kp      &kp  &kp LC(LA(N4))  &kp C_VOL_DN  &kp C_MUTE  &kp C_VOL_UP  &kp LC(LA(N3))
-&kp  &kp  &kp  &kp  &kp  &kp      &kp  &kp             &kp           &kp         &kp           &kp
-&kp  &kp  &kp  &kp  &kp  &kp      &kp  &kp                                                     &kp
+&kp  &kp  &kp  &kp  &kp                &kp             &kp C_BRI_DN  &kp               &kp C_BRI_UP  &kp
+&kp  &kp  &kp  &kp  &kp  &kp      &kp  &kp LC(LA(N4))  &kp C_VOL_DN  &kp C_MUTE        &kp C_VOL_UP  &kp LC(LA(N3))
+&kp  &kp  &kp  &kp  &kp  &kp      &kp  &kp             &kp C_PREV    &kp C_PLAY_PAUSE  &kp C_NEXT    &kp
+&kp  &kp  &kp  &kp  &kp  &kp      &kp  &kp                                                           &kp
             >;
         };
     };
