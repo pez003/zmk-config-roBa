@@ -231,7 +231,7 @@
 &none         &kp N1        &kp N2        &kp N3        &td_comma_dot                            &kp LS(HOME)            &kp LC(LEFT_ARROW)  &kp UP_ARROW    &kp LC(RIGHT_ARROW)  &kp LS(END)
 &kp NUMBER_0  &kp N4        &kp NUMBER_5  &kp N6        &td_plus_astrisk  &trans         &trans  &kp HOME                &kp LEFT_ARROW      &kp DOWN_ARROW  &kp RIGHT_ARROW      &kp END
 &none         &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &td_minus_slash   &kp EQUAL      &trans  &kp LC(LS(LEFT_ARROW))  &kp LS(LEFT_ARROW)  &none           &kp LS(RIGHT_ARROW)  &kp LC(LS(RIGHT_ARROW))
-&trans        &trans        &trans        &kp LANG2     &kp LANG1         &trans         &trans  &trans                                                                           &sleep
+&trans        &trans        &trans        &kp LANG2     &kp LANG1         &trans         &trans  &trans                                                                           &trans
             >;
 
             sensor-bindings = <&inc_dec_kp LC(PAGE_UP) LC(PAGE_DOWN)>;
@@ -293,10 +293,10 @@
 
         setting {
             bindings = <
-&kp  &kp  &kp  &kp  &kp                &kp             &kp C_BRI_DN  &kp               &kp C_BRI_UP  &kp
-&kp  &kp  &kp  &kp  &kp  &kp      &kp  &kp LC(LA(N4))  &kp C_VOL_DN  &kp C_MUTE        &kp C_VOL_UP  &kp LC(LA(N3))
-&kp  &kp  &kp  &kp  &kp  &kp      &kp  &kp             &kp C_PREV    &kp C_PLAY_PAUSE  &kp C_NEXT    &kp
-&kp  &kp  &kp  &kp  &kp  &kp      &kp  &kp                                                           &kp
+&none  &none  &none  &none  &none                    &kp LS(LG(R))   &kp C_BRI_DN  &none             &kp C_BRI_UP  &kp LG(PRINTSCREEN)
+&none  &none  &none  &none  &none  &none      &none  &kp LC(LA(N4))  &kp C_VOL_DN  &kp C_MUTE        &kp C_VOL_UP  &kp LC(LA(N3))
+&none  &none  &none  &none  &none  &none      &none  &none           &kp C_PREV    &kp C_PLAY_PAUSE  &kp C_NEXT    &kp LG(L)
+&none  &none  &none  &none  &none  &none      &none  &none                                                         &sleep
             >;
         };
     };
