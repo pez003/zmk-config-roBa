@@ -39,7 +39,7 @@
     // 左右には何も割り当てない(横のブレは捨てる)
 
     zoom {
-        layers = <4>;
+        layers = <5>;
         bindings = <&none>, <&none>, <&kp LC(EQUAL)>, <&kp LC(MINUS)>;
 
         tick = <100>;
