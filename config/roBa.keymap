@@ -212,7 +212,7 @@
             bindings = <
 &lt 7 Q  &kp L   &kp U   &td_comma_kakko  &kp PERIOD                                                      &kp F        &kp W              &kp R            &kp Y        &kp P
 &lt 3 E  &kp I   &kp A   &kp O            &kp MINUS           &mkp MCLK                  &kp LC(LS(TAB))  &kp K        &kp T              &lt 2 N          &lt 1 S      &lt 3 H
-&td_z    &td_x   &td_c   &td_v            &td_question        &kp KP_NUMBER_2            &kp LC(TAB)      &kp G        &mt RIGHT_SHIFT D  &mt RIGHT_ALT M  &mt RCTRL J  &mt RIGHT_WIN B
+&td_z    &td_x   &td_c   &td_v            &td_question        &none                      &kp LC(TAB)      &kp G        &mt RIGHT_SHIFT D  &mt RIGHT_ALT M  &mt RCTRL J  &mt RIGHT_WIN B
 &trans   &trans  &trans  &kp TAB          &lt_bs 4 BACKSPACE  &mt LEFT_SHIFT DELETE      &lt 4 ENTER      &lt 1 SPACE                                                   &kp ESCAPE
             >;
 
@@ -224,7 +224,7 @@
 &none         &kp N1        &kp N2        &kp N3        &kp EQUAL                                    &kp LG(LA(R))   &kp C_BRI_DN    &kp UP_ARROW    &kp C_BRI_UP     &kp LG(PRINTSCREEN)
 &kp NUMBER_0  &kp N4        &kp NUMBER_5  &kp N6        &td_plus_astrisk  &trans             &trans  &kp HOME        &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp END
 &none         &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &td_minus_slash   &td_comma_dot      &trans  &kp LC(LA(N4))  &kp C_VOL_DN    &kp C_MUTE      &kp C_VOLUME_UP  &kp LC(LA(N3))
-&trans        &trans        &trans        &kp LANG2     &kp LANG1         &trans             &trans  &trans                                                           &kp C_SLEEP_MODE
+&trans        &trans        &trans        &kp LANG2     &kp LANG1         &trans             &trans  &trans                                                           &sleep
             >;
 
             sensor-bindings = <&inc_dec_kp LC(PAGE_UP) LC(PAGE_DOWN)>;
