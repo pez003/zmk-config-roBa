@@ -208,13 +208,6 @@
             bindings = <&kp QUESTION>, <&kp LS(NUMBER_1)>;
         };
 
-        td_comma_kakko: td_comma_kakko {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TD_COMMA_KAKKO";
-            #binding-cells = <0>;
-            bindings = <&kp COMMA>, <&kakko>;
-        };
-
         td_plus_astrisk: td_plus_astrisk {
             compatible = "zmk,behavior-tap-dance";
             label = "TD_PLUS_ASTRISK";
@@ -236,11 +229,11 @@
             bindings = <&kp COMMA>, <&kp DOT>;
         };
 
-        td_dot_kagikakko: td_dot_kagikakko_ {
+        td_kakko_kagikakko: td_kakko_kagikakko {
             compatible = "zmk,behavior-tap-dance";
-            label = "TD_DOT_KAGIKAKKO ";
+            label = "TD_KAKKO_KAGIKAKKO";
             #binding-cells = <0>;
-            bindings = <&kp PERIOD>, <&td_dot_kagikakko>;
+            bindings = <&kakko>, <&kagikakko>;
         };
     };
 
@@ -249,10 +242,10 @@
 
         default_layer {
             bindings = <
-&lt 7 Q  &kp L   &kp U   &td_comma_kakko    &td_dot_kagikakko                                               &kp F        &kp W            &kp R              &kp Y            &kp P
-&kp E    &kp I   &kp A   &kp O              &kp MINUS           &kp C_MUTE                 &kp LC(LS(TAB))  &kp K        &kp T            &lt 2 N            &lt 5 S          &lt 3 H
-&td_z    &td_x   &td_c   &td_v              &td_question        &none                      &kp LC(TAB)      &kp G        &mt RIGHT_WIN D  &mt RIGHT_SHIFT M  &mt RIGHT_ALT J  &mt RCTRL B
-&trans   &trans  &trans  &kp LC(BACKSPACE)  &lt_bs 4 BACKSPACE  &mt LEFT_SHIFT DELETE      &lt 8 ENTER      &lt 1 SPACE                                                       &kp ESCAPE
+&lt 7 Q  &kp L   &kp U   &td_comma_dot      &td_kakko_kagikakko                                              &kp F        &kp W            &kp R              &kp Y            &kp P
+&kp E    &kp I   &kp A   &kp O              &kp MINUS            &kp C_MUTE                 &kp LC(LS(TAB))  &kp K        &kp T            &lt 2 N            &lt 5 S          &lt 3 H
+&td_z    &td_x   &td_c   &td_v              &td_question         &none                      &kp LC(TAB)      &kp G        &mt RIGHT_WIN D  &mt RIGHT_SHIFT M  &mt RIGHT_ALT J  &mt RCTRL B
+&trans   &trans  &trans  &kp LC(BACKSPACE)  &lt_bs 4 BACKSPACE   &mt LEFT_SHIFT DELETE      &lt 8 ENTER      &lt 1 SPACE                                                       &kp ESCAPE
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
