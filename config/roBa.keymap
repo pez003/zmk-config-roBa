@@ -271,9 +271,9 @@
             bindings = <&kp SINGLE_QUOTE>, <&kp DQT>;
         };
 
-        td_num_dot_and_num_comma: td_num_dot_and_num_comma {
+        td_num_dot_and_comma: td_num_dot_and_comma {
             compatible = "zmk,behavior-tap-dance";
-            label = "TD_NUM_DOT_AND_NUM_COMMA";
+            label = "TD_NUM_DOT_AND_COMMA";
             #binding-cells = <0>;
             bindings = <&kp KP_COMMA>, <&kp KP_DOT>;
         };
@@ -295,10 +295,10 @@
 
         NUM_and_ARROW {
             bindings = <
-&none         &kp N1        &kp N2        &kp N3        &td_num_dot_and_num_comma                         &kp LS(HOME)            &kp LC(LEFT_ARROW)  &kp UP_ARROW    &kp LC(RIGHT_ARROW)  &kp LS(END)
-&kp NUMBER_0  &kp N4        &kp NUMBER_5  &kp N6        &td_plus_astrisk           &trans         &trans  &kp HOME                &kp LEFT_ARROW      &kp DOWN_ARROW  &kp RIGHT_ARROW      &kp END
-&none         &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &td_minus_slash            &kp EQUAL      &trans  &kp LC(LS(LEFT_ARROW))  &kp LS(LEFT_ARROW)  &kp LS(SPACE)   &kp LS(RIGHT_ARROW)  &kp LC(LS(RIGHT_ARROW))
-&trans        &trans        &trans        &trans        &trans                     &trans         &trans  &trans                                                                           &trans
+&kp KP_NUMLOCK  &kp N1        &kp N2        &kp N3        &td_num_dot_and_comma                         &kp LS(HOME)            &kp LC(LEFT_ARROW)  &kp UP_ARROW    &kp LC(RIGHT_ARROW)  &kp LS(END)
+&kp NUMBER_0    &kp N4        &kp NUMBER_5  &kp N6        &td_plus_astrisk       &trans         &trans  &kp HOME                &kp LEFT_ARROW      &kp DOWN_ARROW  &kp RIGHT_ARROW      &kp END
+&none           &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &td_minus_slash        &kp EQUAL      &trans  &kp LC(LS(LEFT_ARROW))  &kp LS(LEFT_ARROW)  &kp LS(SPACE)   &kp LS(RIGHT_ARROW)  &kp LC(LS(RIGHT_ARROW))
+&trans          &trans        &trans        &trans        &trans                 &trans         &trans  &trans                                                                           &trans
             >;
 
             sensor-bindings = <&inc_dec_kp LC(PAGE_UP) LC(PAGE_DOWN)>;
@@ -324,9 +324,9 @@
 
         SYMBOL {
             bindings = <
-&none     &none       &kp AMPERSAND  &none        &none                          &none                     &none          &kp GRAVE         &none                    &none
+&none     &none       &kp AMPERSAND  &none        &none                          &none                     &none          &kp CARET         &kp GRAVE                &none
 &kp HASH  &kp DOLLAR  &kp AT         &kp PERCENT  &kp UNDER  &none       &none   &td_slash_and_back_slash  &nami_kakko    &kp SLASH         &td_colon_and_semicolon  &td_quote_and_double_quote
-&none     &none       &none          &none        &none      &none       &none   &none                     &kp LESS_THAN  &kp GREATER_THAN  &kp PIPE                 &kp CARET
+&none     &none       &none          &none        &none      &none       &none   &none                     &kp LESS_THAN  &kp GREATER_THAN  &kp PIPE                 &none
 &trans    &trans      &trans         &trans       &trans     &trans      &trans  &trans                                                                              &none
             >;
         };
