@@ -20,14 +20,15 @@
     scroll-layers = <3>;
 
     // レイヤー2(window-control)中にボールを転がすとウィンドウ操作
-    // 左右はWindows本物のスナップ(Win+←/→)、上下はAutoHotkey(最大化/最小化)
+    // 4方向ともCtrl+Alt+Win+矢印を送り、AutoHotkey(roba-window.ahk)が受け取って動かす
+    // (左右はWindowsのスナップに変換、連続入力はAutoHotkey側で無視)
     // 並び順: 右, 左, 上, 下
 
     gesture {
         layers = <2>;
         bindings =
-            <&kp LG(RIGHT_ARROW)>,
-            <&kp LG(LEFT_ARROW)>,
+            <&kp LC(LA(LG(RIGHT_ARROW)))>,
+            <&kp LC(LA(LG(LEFT_ARROW)))>,
             <&kp LC(LA(LG(UP_ARROW)))>,
             <&kp LC(LA(LG(DOWN_ARROW)))>;
 
