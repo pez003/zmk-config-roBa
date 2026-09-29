@@ -139,6 +139,13 @@
             bindings = <&kp LBKT &kp RBKT &kp LEFT_ARROW>;
             label = "KAGIKAKKO";
         };
+
+        nami_kakko: nimi_kakko {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LBRC &kp RBRC &kp LEFT_ARROW>;
+            label = "NIMI_KAKKO";
+        };
     };
 
     behaviors {
@@ -235,6 +242,34 @@
             #binding-cells = <0>;
             bindings = <&kakko>, <&kagikakko>;
         };
+
+        td_MINUS_TILDE: td_MINUS_TILDE {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_MINUS_TILDE";
+            #binding-cells = <0>;
+            bindings = <&kp MINUS>, <&kp TILDE>;
+        };
+
+        td_slash_and_back_slash: td_slash_and_back_slash {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_SLASH_AND_BACK_SLASH";
+            #binding-cells = <0>;
+            bindings = <&kp KP_DIVIDE>, <&kp BACKSLASH>;
+        };
+
+        td_colon_and_semicolon: td_colon_and_semicolon {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_COLON_AND_SEMICOLON";
+            #binding-cells = <0>;
+            bindings = <&kp COLON>, <&kp SEMICOLON>;
+        };
+
+        td_quote_and_double_quote: td_quote_and_double_quote {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_QUOTE_AND_DOUBLE_QUOTE";
+            #binding-cells = <0>;
+            bindings = <&kp SINGLE_QUOTE>, <&kp DQT>;
+        };
     };
 
     keymap {
@@ -243,7 +278,7 @@
         default_layer {
             bindings = <
 &lt 7 Q  &kp L   &kp U   &td_comma_dot      &td_kakko_kagikakko                                              &kp F        &kp W            &kp R              &kp Y            &kp P
-&kp E    &kp I   &kp A   &kp O              &kp MINUS            &kp C_MUTE                 &kp LC(LS(TAB))  &kp K        &kp T            &lt 2 N            &lt 5 S          &lt 3 H
+&kp E    &kp I   &kp A   &kp O              &td_MINUS_TILDE      &kp C_MUTE                 &kp LC(LS(TAB))  &kp K        &kp T            &lt 2 N            &lt 5 S          &lt 3 H
 &td_z    &td_x   &td_c   &td_v              &td_question         &none                      &kp LC(TAB)      &kp G        &mt RIGHT_WIN D  &mt RIGHT_SHIFT M  &mt RIGHT_ALT J  &mt RCTRL B
 &trans   &trans  &trans  &kp LC(BACKSPACE)  &lt_bs 4 BACKSPACE   &mt LEFT_SHIFT DELETE      &lt 8 ENTER      &lt 1 SPACE                                                       &kp ESCAPE
             >;
@@ -282,10 +317,10 @@
 
         SYMBOL {
             bindings = <
-&kp LG(PRINTSCREEN)  &kp C_BRI_DN    &kp UP_ARROW    &kp C_BRI_UP     &kp LG(LA(R))                                           &td_comma_dot     &kp N1  &kp N2        &kp N3  &none
-&kp HOME             &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp END         &kp LC(LA(KP_NUMBER_0))      &none      &td_plus_astrisk  &kp N4  &kp NUMBER_5  &kp N6  &kp N0
-&kp LC(LA(N4))       &kp C_VOL_DN    &kp C_MUTE      &kp C_VOLUME_UP  &kp LC(LA(N3))  &kp EQUAL                    &kp EQUAL  &td_minus_slash   &kp N7  &kp N8        &kp N9  &none
-&trans               &trans          &trans          &trans           &trans          &trans                       &trans     &trans                                          &none
+&none     &none       &kp AMPERSAND  &none        &none                          &none                     &none          &kp GRAVE         &none                    &none
+&kp HASH  &kp DOLLAR  &kp AT         &kp PERCENT  &kp UNDER  &none       &none   &td_slash_and_back_slash  &nami_kakko    &kp SLASH         &td_colon_and_semicolon  &td_quote_and_double_quote
+&none     &none       &none          &none        &none      &none       &none   &none                     &kp LESS_THAN  &kp GREATER_THAN  &kp PIPE                 &kp CARET
+&trans    &trans      &trans         &trans       &trans     &trans      &trans  &trans                                                                              &none
             >;
         };
 
