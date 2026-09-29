@@ -236,12 +236,12 @@
         default_layer {
             bindings = <
 &lt 7 Q  &kp L   &kp U   &td_comma_kakko    &kp PERIOD                                                      &kp F        &kp W            &kp R              &kp Y            &kp P
-&kp E    &kp I   &kp A   &kp O              &kp MINUS           &mkp MCLK                  &kp LC(LS(TAB))  &kp K        &kp T            &lt 2 N            &lt 5 S          &lt 3 H
+&kp E    &kp I   &kp A   &kp O              &kp MINUS           &kp C_MUTE                 &kp LC(LS(TAB))  &kp K        &kp T            &lt 2 N            &lt 5 S          &lt 3 H
 &td_z    &td_x   &td_c   &td_v              &td_question        &none                      &kp LC(TAB)      &kp G        &mt RIGHT_WIN D  &mt RIGHT_SHIFT M  &mt RIGHT_ALT J  &mt RCTRL B
 &trans   &trans  &trans  &kp LC(BACKSPACE)  &lt_bs 4 BACKSPACE  &mt LEFT_SHIFT DELETE      &lt 8 ENTER      &lt 1 SPACE                                                       &kp ESCAPE
             >;
 
-            sensor-bindings = <&encoder_msc_down_up>;
+            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
         };
 
         NUM_and_ARROW {
