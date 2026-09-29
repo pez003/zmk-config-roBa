@@ -307,13 +307,13 @@
 
         NUM_and_ARROW {
             bindings = <
-&kp KP_NUMLOCK  &kp N1        &kp N2        &kp N3        &td_num_dot_and_comma                         &none     &none               &kp UP_ARROW    &none                &none
-&kp NUMBER_0    &kp N4        &kp NUMBER_5  &kp N6        &td_plus_astrisk       &trans         &trans  &kp HOME  &kp LEFT_ARROW      &kp DOWN_ARROW  &kp RIGHT_ARROW      &kp END
-&none           &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &td_minus_slash        &kp EQUAL      &trans  &none     &kp LC(LEFT_ARROW)  &none           &kp LC(RIGHT_ARROW)  &none
-&trans          &trans        &trans        &trans        &trans                 &trans         &trans  &trans                                                             &trans
+&kp KP_NUMLOCK  &kp N1        &kp N2        &kp N3        &td_num_dot_and_comma                          &none     &none               &kp UP_ARROW    &none                &none
+&kp NUMBER_0    &kp N4        &kp NUMBER_5  &kp N6        &td_plus_astrisk       &kp C_MUTE      &trans  &kp HOME  &kp LEFT_ARROW      &kp DOWN_ARROW  &kp RIGHT_ARROW      &kp END
+&none           &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &td_minus_slash        &kp EQUAL       &trans  &none     &kp LC(LEFT_ARROW)  &none           &kp LC(RIGHT_ARROW)  &none
+&trans          &trans        &trans        &trans        &trans                 &trans          &trans  &trans                                                             &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp LC(PAGE_UP) LC(PAGE_DOWN)>;
+            sensor-bindings = <&inc_dec_kp LC(C_VOL_DN) LC(C_VOL_UP)>;
         };
 
         TB_window-control {
@@ -383,7 +383,7 @@
             >;
         };
 
-        layer_9 {
+        LEFT_HAND {
             bindings = <
 &trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
