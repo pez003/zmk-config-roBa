@@ -226,7 +226,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TD_MINUS_SLASH";
             #binding-cells = <0>;
-            bindings = <&kp MINUS>, <&kp KP_SLASH>;
+            bindings = <&kp KP_MINUS>, <&kp KP_SLASH>;
         };
 
         td_comma_dot: td_comma_dot {
@@ -270,6 +270,13 @@
             #binding-cells = <0>;
             bindings = <&kp SINGLE_QUOTE>, <&kp DQT>;
         };
+
+        td_num_dot_and_num_comma: td_num_dot_and_num_comma {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_NUM_DOT_AND_NUM_COMMA";
+            #binding-cells = <0>;
+            bindings = <&kp KP_COMMA>, <&kp KP_DOT>;
+        };
     };
 
     keymap {
@@ -288,10 +295,10 @@
 
         NUM_and_ARROW {
             bindings = <
-&none         &kp N1        &kp N2        &kp N3        &td_comma_dot                            &kp LS(HOME)            &kp LC(LEFT_ARROW)  &kp UP_ARROW    &kp LC(RIGHT_ARROW)  &kp LS(END)
-&kp NUMBER_0  &kp N4        &kp NUMBER_5  &kp N6        &td_plus_astrisk  &trans         &trans  &kp HOME                &kp LEFT_ARROW      &kp DOWN_ARROW  &kp RIGHT_ARROW      &kp END
-&none         &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &td_minus_slash   &kp EQUAL      &trans  &kp LC(LS(LEFT_ARROW))  &kp LS(LEFT_ARROW)  &kp LS(SPACE)   &kp LS(RIGHT_ARROW)  &kp LC(LS(RIGHT_ARROW))
-&trans        &trans        &trans        &trans        &trans            &trans         &trans  &trans                                                                           &trans
+&none         &kp N1        &kp N2        &kp N3        &td_num_dot_and_num_comma                         &kp LS(HOME)            &kp LC(LEFT_ARROW)  &kp UP_ARROW    &kp LC(RIGHT_ARROW)  &kp LS(END)
+&kp NUMBER_0  &kp N4        &kp NUMBER_5  &kp N6        &td_plus_astrisk           &trans         &trans  &kp HOME                &kp LEFT_ARROW      &kp DOWN_ARROW  &kp RIGHT_ARROW      &kp END
+&none         &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &td_minus_slash            &kp EQUAL      &trans  &kp LC(LS(LEFT_ARROW))  &kp LS(LEFT_ARROW)  &kp LS(SPACE)   &kp LS(RIGHT_ARROW)  &kp LC(LS(RIGHT_ARROW))
+&trans        &trans        &trans        &trans        &trans                     &trans         &trans  &trans                                                                           &trans
             >;
 
             sensor-bindings = <&inc_dec_kp LC(PAGE_UP) LC(PAGE_DOWN)>;
