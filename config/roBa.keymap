@@ -327,11 +327,13 @@
 
         TB_SCROLL_and_TAB {
             bindings = <
-&none  &none  &none  &none  &none                    &none    &none     &none  &none  &none
-&none  &none  &none  &none  &none  &none      &none  &none    &kp HOME  &none  &none  &none
-&none  &none  &none  &none  &none  &none      &none  &none    &kp END   &none  &none  &none
-&none  &none  &none  &none  &none  &none      &none  &kp TAB                          &none
+&none  &none  &none  &none  &none                        &none    &none     &none  &none  &none
+&none  &none  &none  &none  &none  &mkp MCLK      &none  &none    &kp HOME  &none  &none  &none
+&none  &none  &none  &none  &none  &none          &none  &none    &kp END   &none  &none  &none
+&none  &none  &none  &none  &none  &none          &none  &kp TAB                          &none
             >;
+
+            sensor-bindings = <&encoder_msc_down_up>;
         };
 
         SYMBOL {
@@ -345,11 +347,13 @@
 
         tb_zoom {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &none   &none   &none   &sh_gobaku_taisaku
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                          &trans
+&trans  &trans  &trans  &trans  &trans                                &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &kp LC(NUMBER_0)      &trans  &trans  &none   &none   &none   &sh_gobaku_taisaku
+&trans  &trans  &trans  &trans  &trans  &trans                &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                &trans  &trans                          &trans
             >;
+
+            sensor-bindings = <&inc_dec_kp LC(MINUS) LC(PLUS)>;
         };
 
         FUNCTION {
