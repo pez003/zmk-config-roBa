@@ -177,6 +177,13 @@
             bindings = <&kp LBRC &kp RBRC &kp LEFT_ARROW>;
             label = "NIMI_KAKKO";
         };
+
+        kinkyu_taihi: kinkyu_taihi {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp C_MUTE &kp LG(D)>;
+            label = "KINKYU_TAIHI";
+        };
     };
 
     behaviors {
@@ -404,10 +411,10 @@
 
         LEFT_HAND {
             bindings = <
-&kp ESC  &kp             &kp UP_ARROW       &kp                &kp F                                   &kp  &kp  &kp  &kp  &kp
-&kp      &kp LEFT_ARROW  &lt 10 DOWN_ARROW  &lt 5 RIGHT_ARROW  &lt 3 LC(LS(TAB))  &kp C_MUTE      &kp  &kp  &kp  &kp  &kp  &kp
-&kp      &kp C_VOL_DN    &kp C_MUTE         &kp C_VOL_UP       &kp LC(TAB)        &kp             &kp  &kp  &kp  &kp  &kp  &kp
-&kp      &kp             &kp                &kp                &kp SPACE          &kp             &kp  &kp                 &kp
+&kp ESC        &kp             &kp UP_ARROW       &kp                &kp F                                   &kp  &kp  &kp  &kp  &kp
+&kp            &kp LEFT_ARROW  &lt 10 DOWN_ARROW  &lt 5 RIGHT_ARROW  &lt 3 LC(LS(TAB))  &kp C_MUTE      &kp  &kp  &kp  &kp  &kp  &kp
+&kp            &kp C_VOL_DN    &kp C_MUTE         &kp C_VOL_UP       &kp LC(TAB)        &kp             &kp  &kp  &kp  &kp  &kp  &kp
+&kinkyu_taihi  &kp             &kp                &kp                &kp SPACE          &kp             &kp  &kp                 &kp
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
