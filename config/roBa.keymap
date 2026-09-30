@@ -16,6 +16,12 @@
 
 &sensors { triggers-per-rotation = <12>; };
 
+// エンコーダーのカーソル移動用：マウス移動を最初から最高速にする
+// （初期設定は0.3秒かけて加速するので、1カチッ(0.03秒)だとほぼ動かない）
+&mmv {
+    time-to-max-speed-ms = <0>;
+};
+
 &trackball {
     scroll-layers = <8>;
 
