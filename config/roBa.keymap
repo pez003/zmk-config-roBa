@@ -440,7 +440,7 @@
 &trans  &trans  &trans  &trans  &trans  &trans           &trans  &trans                          &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp LG(MINUS) LG(PLUS)>;
+            sensor-bindings = <&inc_dec_kp LG(MINUS) LG(EQUAL)>;
         };
     };
 };
