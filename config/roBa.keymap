@@ -18,9 +18,8 @@
 
 // エンコーダーのカーソル移動用：マウス移動を最初から最高速にする
 // （初期設定は0.3秒かけて加速するので、1カチッ(0.03秒)だとほぼ動かない）
-&mmv {
-    time-to-max-speed-ms = <0>;
-};
+
+&mmv { time-to-max-speed-ms = <0>; };
 
 &trackball {
     scroll-layers = <8>;
@@ -226,11 +225,13 @@
         };
 
         // エンコーダーでマウスカーソルを左右に動かす（1カチッごとに tap-ms の間だけ動く）
+
         encoder_mmv_left_right: encoder_mmv_left_right {
             compatible = "zmk,behavior-sensor-rotate";
             label = "ENCODER_MMV_LEFT_RIGHT";
             #sensor-binding-cells = <0>;
             bindings = <&mmv MOVE_RIGHT>, <&mmv MOVE_LEFT>;
+
             tap-ms = <30>;
         };
 
@@ -407,13 +408,14 @@
 
         LEFT_HAND {
             bindings = <
-&kp ESC        &none           &kp M     &none              &kp LS(LC(TAB))                         &none  &none  &none  &none  &none
-&none          &kp LEFT_ARROW  &lt 10 J  &lt 9 RIGHT_ARROW  &lt 8 LC(TAB)    &kp C_MUTE      &none  &none  &none  &none  &none  &none
-&none          &kp S           &kp R     &kp D              &none            &none           &none  &none  &none  &none  &none  &none
-&kinkyu_taihi  &none           &none     &none              &kp SPACE        &none           &none  &none                       &kinkyu_taihi
+&kp ESC        &none           &kp M     &none              &kp LS(LC(TAB))                       &none  &none  &none  &none  &none
+&none          &kp LEFT_ARROW  &lt 10 J  &lt 9 RIGHT_ARROW  &lt 8 LC(TAB)    &mkp MB1      &none  &none  &none  &none  &none  &none
+&none          &kp S           &kp R     &kp D              &none            &none         &none  &none  &none  &none  &none  &none
+&kinkyu_taihi  &none           &none     &none              &kp SPACE        &none         &none  &none                       &kinkyu_taihi
             >;
 
             // 何も押してない時：カーソルを左右に移動（長押し中は上のレイヤーが優先される）
+
             sensor-bindings = <&encoder_mmv_left_right>;
         };
 
