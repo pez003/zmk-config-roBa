@@ -423,10 +423,10 @@
 
         LEFT_HAND {
             bindings = <
-&kp ESC        &none           &kp UP_ARROW       &none              &kp F                                     &none  &none  &none  &none  &none
-&none          &kp LEFT_ARROW  &lt 10 DOWN_ARROW  &lt 5 RIGHT_ARROW  &lt 3 LC(LS(TAB))  &kp C_MUTE      &none  &none  &none  &none  &none  &none
-&none          &kp C_VOL_DN    &kp C_MUTE         &kp C_VOL_UP       &kp LC(TAB)        &none           &none  &none  &none  &none  &none  &none
-&kinkyu_taihi  &none           &none              &none              &kp SPACE          &none           &none  &none                       &none
+&kp ESC        &none           &kp M     &none              &kp LS(LC(TAB))                         &none  &none  &none  &none  &none
+&none          &kp LEFT_ARROW  &lt 10 J  &lt 5 RIGHT_ARROW  &lt 3 LC(TAB)    &kp C_MUTE      &none  &none  &none  &none  &none  &none
+&none          &kp S           &kp R     &kp D              &none            &none           &none  &none  &none  &none  &none  &none
+&kinkyu_taihi  &none           &none     &none              &kp SPACE        &none           &none  &none                       &kinkyu_taihi
             >;
         };
 
