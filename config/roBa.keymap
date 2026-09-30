@@ -17,15 +17,15 @@
 &sensors { triggers-per-rotation = <12>; };
 
 &trackball {
-    scroll-layers = <3>;
+    scroll-layers = <8>;
 
-    // レイヤー2(window-control)中にボールを転がすとウィンドウ操作
+    // レイヤー7(TB_window-control)中にボールを転がすとウィンドウ操作
     // 4方向ともCtrl+Alt+Win+矢印を送り、AutoHotkey(roba-window.ahk)が受け取って動かす
     // (左右はWindowsのスナップに変換、連続入力はAutoHotkey側で無視)
     // 並び順: 右, 左, 上, 下
 
     gesture {
-        layers = <2>;
+        layers = <7>;
         bindings =
             <&kp LC(LA(LG(RIGHT_ARROW)))>,
             <&kp LC(LA(LG(LEFT_ARROW)))>,
@@ -37,11 +37,11 @@
         tap-ms = <5>;
     };
 
-    // レイヤー5(バックスペース/エンター長押し)中にボールを上下で拡大・縮小
+    // レイヤー9(tb_zoom)中にボールを上下で拡大・縮小
     // 左右には何も割り当てない(横のブレは捨てる)
 
     zoom {
-        layers = <5>;
+        layers = <9>;
         bindings = <&none>, <&none>, <&kp LC(EQUAL)>, <&kp LC(MINUS)>;
 
         tick = <400>;
@@ -107,20 +107,20 @@
         };
 
         LEFT_HAND {
-            bindings = <&to 9>;
+            bindings = <&to 6>;
             key-positions = <0 1>;
         };
 
         LEFT_HAND_TO_LAYER_0 {
             bindings = <&to 0>;
             key-positions = <19 18 41>;
-            layers = <9>;
+            layers = <6>;
         };
 
         LEFT_HAND_TO_LAYER_0_SUB {
             bindings = <&to 0>;
             key-positions = <8 9>;
-            layers = <9>;
+            layers = <6>;
         };
 
         henkan_Secret {
@@ -199,7 +199,7 @@
     };
 
     behaviors {
-        // 単体押し:BS / 長押し:レイヤー4 / 1回押してすぐ長押し:BS連打
+        // 単体押し:BS / 長押し:レイヤー2(SYMBOL) / 1回押してすぐ長押し:BS連打
 
         lt_bs: lt_bs {
             compatible = "zmk,behavior-hold-tap";
@@ -217,6 +217,15 @@
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
+        };
+
+        // エンコーダーでマウスカーソルを左右に動かす（1カチッごとに tap-ms の間だけ動く）
+        encoder_mmv_left_right: encoder_mmv_left_right {
+            compatible = "zmk,behavior-sensor-rotate";
+            label = "ENCODER_MMV_LEFT_RIGHT";
+            #sensor-binding-cells = <0>;
+            bindings = <&mmv MOVE_RIGHT>, <&mmv MOVE_LEFT>;
+            tap-ms = <30>;
         };
 
         encoder_msc_down_up: encoder_msc_down_up {
@@ -334,10 +343,10 @@
 
         default_layer {
             bindings = <
-&lt 7 Q        &kp L   &kp U   &td_comma_dot      &td_kakko_kagikakko                                              &kp F        &kp W            &kp R              &kp Y            &kp P
-&kp E          &kp I   &kp A   &kp O              &td_MINUS_TILDE      &kp C_MUTE                 &kp LC(LS(TAB))  &kp K        &kp T            &lt 2 N            &lt 5 S          &lt 3 H
+&lt 5 Q        &kp L   &kp U   &td_comma_dot      &td_kakko_kagikakko                                              &kp F        &kp W            &kp R              &kp Y            &kp P
+&kp E          &kp I   &kp A   &kp O              &td_MINUS_TILDE      &kp C_MUTE                 &kp LC(LS(TAB))  &kp K        &kp T            &lt 7 N            &lt 9 S          &lt 8 H
 &td_z          &td_x   &td_c   &td_v              &td_question         &none                      &kp LC(TAB)      &kp G        &mt RIGHT_WIN D  &mt RIGHT_SHIFT M  &mt RIGHT_ALT J  &mt RCTRL B
-&kinkyu_taihi  &trans  &trans  &kp LC(BACKSPACE)  &lt_bs 4 BACKSPACE   &mt LEFT_SHIFT DELETE      &lt 8 ENTER      &lt 1 SPACE                                                       &kp ESCAPE
+&kinkyu_taihi  &trans  &trans  &kp LC(BACKSPACE)  &lt_bs 2 BACKSPACE   &mt LEFT_SHIFT DELETE      &lt 4 ENTER      &lt 1 SPACE                                                       &kp ESCAPE
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
@@ -352,6 +361,54 @@
             >;
 
             sensor-bindings = <&inc_dec_kp LC(C_VOL_DN) LC(C_VOL_UP)>;
+        };
+
+        SYMBOL {
+            bindings = <
+&none     &none       &kp AMPERSAND  &none        &none                          &none                     &none          &kp CARET         &kp GRAVE                &none
+&kp HASH  &kp DOLLAR  &kp AT         &kp PERCENT  &kp UNDER  &none       &none   &td_slash_and_back_slash  &nami_kakko    &kp SLASH         &td_colon_and_semicolon  &td_quote_and_double_quote
+&none     &none       &none          &none        &none      &none       &none   &none                     &kp LESS_THAN  &kp GREATER_THAN  &kp PIPE                 &none
+&trans    &trans      &trans         &trans       &trans     &trans      &trans  &trans                                                                              &none
+            >;
+        };
+
+        FUNCTION {
+            bindings = <
+&trans   &kp F1  &kp F2  &kp F3  &trans                      &trans  &kp F11  &kp F12  &kp F13  &trans
+&kp F10  &kp F4  &kp F5  &kp F6  &trans  &trans      &trans  &trans  &kp F14  &kp F15  &kp F16  &kp F20
+&trans   &kp F7  &kp F8  &kp F9  &trans  &trans      &trans  &trans  &kp F17  &kp F18  &kp F19  &trans
+&trans   &trans  &trans  &trans  &trans  &trans      &trans  &trans                             &trans
+            >;
+        };
+
+        setting {
+            bindings = <
+&none  &none  &none  &none  &none                    &kp LS(LG(R))   &kp C_BRI_DN  &night_modo       &kp C_BRI_UP  &kp LG(PRINTSCREEN)
+&none  &none  &none  &none  &none  &none      &none  &kp LC(LA(N4))  &kp C_VOL_DN  &kp C_MUTE        &kp C_VOL_UP  &kp LC(LA(N3))
+&none  &none  &none  &none  &none  &none      &none  &none           &kp C_PREV    &kp C_PLAY_PAUSE  &kp C_NEXT    &kp LG(L)
+&none  &none  &none  &none  &none  &none      &none  &none                                                         &sleep
+            >;
+        };
+
+        bluetooth {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans                           &none   &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &none
+&trans  &trans  &trans  &trans  &trans  &trans      &trans       &trans  &bt BT_SEL 3  &bt BT_SEL 4  &trans        &trans
+&trans  &none   &none   &none   &trans  &trans      &bootloader  &trans  &trans        &trans        &trans        &bt BT_CLR
+&trans  &trans  &trans  &trans  &trans  &trans      &trans       &trans                                            &bt BT_CLR_ALL
+            >;
+        };
+
+        LEFT_HAND {
+            bindings = <
+&kp ESC        &none           &kp M     &none              &kp LS(LC(TAB))                         &none  &none  &none  &none  &none
+&none          &kp LEFT_ARROW  &lt 10 J  &lt 9 RIGHT_ARROW  &lt 8 LC(TAB)    &kp C_MUTE      &none  &none  &none  &none  &none  &none
+&none          &kp S           &kp R     &kp D              &none            &none           &none  &none  &none  &none  &none  &none
+&kinkyu_taihi  &none           &none     &none              &kp SPACE        &none           &none  &none                       &kinkyu_taihi
+            >;
+
+            // 何も押してない時：カーソルを左右に移動（長押し中は上のレイヤーが優先される）
+            sensor-bindings = <&encoder_mmv_left_right>;
         };
 
         TB_window-control {
@@ -374,15 +431,6 @@
             sensor-bindings = <&encoder_msc_down_up>;
         };
 
-        SYMBOL {
-            bindings = <
-&none     &none       &kp AMPERSAND  &none        &none                          &none                     &none          &kp CARET         &kp GRAVE                &none
-&kp HASH  &kp DOLLAR  &kp AT         &kp PERCENT  &kp UNDER  &none       &none   &td_slash_and_back_slash  &nami_kakko    &kp SLASH         &td_colon_and_semicolon  &td_quote_and_double_quote
-&none     &none       &none          &none        &none      &none       &none   &none                     &kp LESS_THAN  &kp GREATER_THAN  &kp PIPE                 &none
-&trans    &trans      &trans         &trans       &trans     &trans      &trans  &trans                                                                              &none
-            >;
-        };
-
         tb_zoom {
             bindings = <
 &trans  &trans  &trans  &trans  &trans                                &trans  &trans  &trans  &trans  &trans
@@ -392,42 +440,6 @@
             >;
 
             sensor-bindings = <&inc_dec_kp LC(MINUS) LC(PLUS)>;
-        };
-
-        FUNCTION {
-            bindings = <
-&trans   &kp F1  &kp F2  &kp F3  &trans                      &trans  &kp F11  &kp F12  &kp F13  &trans
-&kp F10  &kp F4  &kp F5  &kp F6  &trans  &trans      &trans  &trans  &kp F14  &kp F15  &kp F16  &kp F20
-&trans   &kp F7  &kp F8  &kp F9  &trans  &trans      &trans  &trans  &kp F17  &kp F18  &kp F19  &trans
-&trans   &trans  &trans  &trans  &trans  &trans      &trans  &trans                             &trans
-            >;
-        };
-
-        bluetooth {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans                           &none   &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &none
-&trans  &trans  &trans  &trans  &trans  &trans      &trans       &trans  &bt BT_SEL 3  &bt BT_SEL 4  &trans        &trans
-&trans  &none   &none   &none   &trans  &trans      &bootloader  &trans  &trans        &trans        &trans        &bt BT_CLR
-&trans  &trans  &trans  &trans  &trans  &trans      &trans       &trans                                            &bt BT_CLR_ALL
-            >;
-        };
-
-        setting {
-            bindings = <
-&none  &none  &none  &none  &none                    &kp LS(LG(R))   &kp C_BRI_DN  &night_modo       &kp C_BRI_UP  &kp LG(PRINTSCREEN)
-&none  &none  &none  &none  &none  &none      &none  &kp LC(LA(N4))  &kp C_VOL_DN  &kp C_MUTE        &kp C_VOL_UP  &kp LC(LA(N3))
-&none  &none  &none  &none  &none  &none      &none  &none           &kp C_PREV    &kp C_PLAY_PAUSE  &kp C_NEXT    &kp LG(L)
-&none  &none  &none  &none  &none  &none      &none  &none                                                         &sleep
-            >;
-        };
-
-        LEFT_HAND {
-            bindings = <
-&kp ESC        &none           &kp M     &none              &kp LS(LC(TAB))                         &none  &none  &none  &none  &none
-&none          &kp LEFT_ARROW  &lt 10 J  &lt 5 RIGHT_ARROW  &lt 3 LC(TAB)    &kp C_MUTE      &none  &none  &none  &none  &none  &none
-&none          &kp S           &kp R     &kp D              &none            &none           &none  &none  &none  &none  &none  &none
-&kinkyu_taihi  &none           &none     &none              &kp SPACE        &none           &none  &none                       &kinkyu_taihi
-            >;
         };
 
         WIN_ZOOM {
