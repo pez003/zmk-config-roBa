@@ -122,6 +122,11 @@
             key-positions = <8 9>;
             layers = <9>;
         };
+
+        henkan_Secret {
+            bindings = <&henkan_Secret>;
+            key-positions = <2 1>;
+        };
     };
 
     macros {
@@ -183,6 +188,13 @@
             #binding-cells = <0>;
             bindings = <&kp C_MUTE &kp LG(D)>;
             label = "KINKYU_TAIHI";
+        };
+
+        henkan_Secret: henkan_Secret {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LANG1 &kp K &kp O &kp M &kp A &kp N &kp D &kp O &kp SPACE>;
+            label = "HENKAN_SECRET";
         };
     };
 
