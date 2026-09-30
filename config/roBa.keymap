@@ -87,11 +87,13 @@
         LANG_1 {
             bindings = <&kp LANG1>;
             key-positions = <19 41 18>;
+            layers = <0>;
         };
 
         LANG_2 {
             bindings = <&kp LANG2>;
             key-positions = <12 38 13>;
+            layers = <0>;
         };
 
         Mission_Control {
@@ -102,6 +104,23 @@
         Show_Desktop {
             bindings = <&kp LG(D)>;
             key-positions = <20 30>;
+        };
+
+        LEFT_HAND {
+            bindings = <&to 9>;
+            key-positions = <0 1>;
+        };
+
+        LEFT_HAND_TO_LAYER_0 {
+            bindings = <&to 0>;
+            key-positions = <19 18 41>;
+            layers = <9>;
+        };
+
+        LEFT_HAND_TO_LAYER_0_SUB {
+            bindings = <&to 0>;
+            key-positions = <8 9>;
+            layers = <9>;
         };
     };
 
@@ -385,11 +404,24 @@
 
         LEFT_HAND {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                          &trans
+&kp ESC  &kp             &kp UP_ARROW       &kp                &kp F                                   &kp  &kp  &kp  &kp  &kp
+&kp      &kp LEFT_ARROW  &lt 10 DOWN_ARROW  &lt 5 RIGHT_ARROW  &lt 3 LC(LS(TAB))  &kp C_MUTE      &kp  &kp  &kp  &kp  &kp  &kp
+&kp      &kp C_VOL_DN    &kp C_MUTE         &kp C_VOL_UP       &kp LC(TAB)        &kp             &kp  &kp  &kp  &kp  &kp  &kp
+&kp      &kp             &kp                &kp                &kp SPACE          &kp             &kp  &kp                 &kp
             >;
+
+            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
+        };
+
+        WIN_ZOOM {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans                           &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &kp LG(ESC)      &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans           &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans           &trans  &trans                          &trans
+            >;
+
+            sensor-bindings = <&inc_dec_kp LG(MINUS) LG(PLUS)>;
         };
     };
 };
