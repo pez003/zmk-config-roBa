@@ -423,10 +423,10 @@
 
         LEFT_HAND {
             bindings = <
-&kp ESC        &kp             &kp UP_ARROW       &kp                &kp F                                   &kp  &kp  &kp  &kp  &kp
-&kp            &kp LEFT_ARROW  &lt 10 DOWN_ARROW  &lt 5 RIGHT_ARROW  &lt 3 LC(LS(TAB))  &kp C_MUTE      &kp  &kp  &kp  &kp  &kp  &kp
-&kp            &kp C_VOL_DN    &kp C_MUTE         &kp C_VOL_UP       &kp LC(TAB)        &kp             &kp  &kp  &kp  &kp  &kp  &kp
-&kinkyu_taihi  &kp             &kp                &kp                &kp SPACE          &kp             &kp  &kp                 &kp
+&kp ESC        &none           &kp UP_ARROW       &none              &kp F                                     &none  &none  &none  &none  &none
+&none          &kp LEFT_ARROW  &lt 10 DOWN_ARROW  &lt 5 RIGHT_ARROW  &lt 3 LC(LS(TAB))  &kp C_MUTE      &none  &none  &none  &none  &none  &none
+&none          &kp C_VOL_DN    &kp C_MUTE         &kp C_VOL_UP       &kp LC(TAB)        &none           &none  &none  &none  &none  &none  &none
+&kinkyu_taihi  &none           &none              &none              &kp SPACE          &none           &none  &none                       &none
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
