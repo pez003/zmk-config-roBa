@@ -32,7 +32,7 @@
             <&kp LC(LA(LG(UP_ARROW)))>,
             <&kp LC(LA(LG(DOWN_ARROW)))>;
 
-        tick = <600>;
+        tick = <450>;
         wait-ms = <300>;
         tap-ms = <5>;
     };
@@ -44,7 +44,7 @@
         layers = <9>;
         bindings = <&none>, <&none>, <&kp LC(EQUAL)>, <&kp LC(MINUS)>;
 
-        tick = <400>;
+        tick = <300>;
         wait-ms = <5>;
         tap-ms = <5>;
     };
