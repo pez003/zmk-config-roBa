@@ -223,6 +223,20 @@
     };
 
     behaviors {
+        // ZXCVのタップダンス用の「長押しで修飾キー」：
+        // 文字を打ってる途中（直前0.15秒以内にキーを押してた時）は、待たずにすぐ「文字」に決める
+        // → 「ざ」を速く打った時に「あz」と順番が入れ替わるのを防ぐ
+        mt_td: mt_for_tapdance {
+            compatible = "zmk,behavior-hold-tap";
+            label = "MT_FOR_TAPDANCE";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <200>;
+            quick-tap-ms = <0>;
+            require-prior-idle-ms = <150>;
+            bindings = <&kp>, <&kp>;
+        };
+
         // S・H用の長押し：次に「左手」のキーを押した時（またはそのまま長押しした時）だけレイヤーにする
         // 右手で続けて打った時（sh、su など）は普通の文字になる
         lt_oh: lt_other_hand {
@@ -291,28 +305,36 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TD_C";
             #binding-cells = <0>;
-            bindings = <&mt LEFT_SHIFT C>, <&kp LC(C)>;
+            bindings = <&mt_td LEFT_SHIFT C>, <&kp LC(C)>;
         };
 
         td_v: td_v {
             compatible = "zmk,behavior-tap-dance";
             label = "TD_V";
             #binding-cells = <0>;
-            bindings = <&mt LEFT_WIN V>, <&kp LC(V)>, <&kp LG(V)>;
+            bindings = <&mt_td LEFT_WIN V>, <&kp LC(V)>, <&kp LG(V)>;
         };
 
         td_x: td_x {
             compatible = "zmk,behavior-tap-dance";
             label = "TD_X";
             #binding-cells = <0>;
-            bindings = <&mt LEFT_ALT X>, <&kp LC(X)>;
+            bindings = <&mt_td LEFT_ALT X>, <&kp LC(X)>;
+        };
+
+        // Q：1回=q（長押しでbluetoothレイヤー）／2回=やり直し(Ctrl+Y)
+        td_q: td_q {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_Q";
+            #binding-cells = <0>;
+            bindings = <&lt 5 Q>, <&kp LC(Y)>;
         };
 
         td_z: td_z {
             compatible = "zmk,behavior-tap-dance";
             label = "TD_Z";
             #binding-cells = <0>;
-            bindings = <&mt LCTRL Z>, <&kp LC(Z)>, <&kp LC(Y)>;
+            bindings = <&mt_td LCTRL Z>, <&kp LC(Z)>;  // やり直し(Ctrl+Y)はQの2回押しへ移動
         };
 
         td_question: td_question {
@@ -391,7 +413,7 @@
 
         default_layer {
             bindings = <
-&lt 5 Q        &kp L   &kp U   &td_comma_dot      &td_kakko_kagikakko                                              &kp F        &kp W            &kp R              &kp Y            &kp P
+&td_q           &kp L   &kp U   &td_comma_dot      &td_kakko_kagikakko                                              &kp F        &kp W            &kp R              &kp Y            &kp P
 &kp E          &kp I   &kp A   &kp O              &td_MINUS_TILDE      &kp C_MUTE                 &kp LC(LS(TAB))  &kp K        &kp T            &lt 7 N            &lt_oh 11 S          &lt_oh 9 H
 &td_z          &td_x   &td_c   &td_v              &td_question         &none                      &kp LC(TAB)      &kp G        &mt RIGHT_WIN D  &mt RIGHT_SHIFT M  &mt RIGHT_ALT J  &mt RCTRL B
 &kinkyu_taihi  &trans  &trans  &kp LC(BACKSPACE)  &lt_bs 2 BACKSPACE   &mt LEFT_SHIFT DELETE      &lt 4 ENTER      &lt 1 SPACE                                                       &kp ESCAPE
