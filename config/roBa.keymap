@@ -322,19 +322,22 @@
             bindings = <&mt_td LEFT_ALT X>, <&kp LC(X)>;
         };
 
-        // Q：1回=q（長押しでbluetoothレイヤー）／2回=やり直し(Ctrl+Y)
+        // Q：1回=q（長押しでbluetoothレイヤー）／2回=元に戻す(Ctrl+Z)
         td_q: td_q {
             compatible = "zmk,behavior-tap-dance";
             label = "TD_Q";
             #binding-cells = <0>;
-            bindings = <&lt 5 Q>, <&kp LC(Y)>;
+            tapping-term-ms = <300>;  // 2回押しの受付時間（初期値200）。Qはほぼ打たないので長めでOK
+            bindings = <&lt 5 Q>, <&kp LC(Z)>;
         };
 
-        td_z: td_z {
+        // L：1回=l／2回=やり直し(Ctrl+Y)
+        // 文字を打ってる途中で次のキーを押せば、待たずにすぐ l に決まる
+        td_l: td_l {
             compatible = "zmk,behavior-tap-dance";
-            label = "TD_Z";
+            label = "TD_L";
             #binding-cells = <0>;
-            bindings = <&mt_td LCTRL Z>, <&kp LC(Z)>;  // やり直し(Ctrl+Y)はQの2回押しへ移動
+            bindings = <&kp L>, <&kp LC(Y)>;
         };
 
         td_question: td_question {
@@ -372,13 +375,6 @@
             bindings = <&kakko>, <&kagikakko>;
         };
 
-        td_MINUS_TILDE: td_MINUS_TILDE {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TD_MINUS_TILDE";
-            #binding-cells = <0>;
-            bindings = <&kp MINUS>, <&kp TILDE>;
-        };
-
         td_slash_and_back_slash: td_slash_and_back_slash {
             compatible = "zmk,behavior-tap-dance";
             label = "TD_SLASH_AND_BACK_SLASH";
@@ -413,9 +409,9 @@
 
         default_layer {
             bindings = <
-&td_q           &kp L   &kp U   &td_comma_dot      &td_kakko_kagikakko                                              &kp F        &kp W            &kp R              &kp Y            &kp P
-&kp E          &kp I   &kp A   &kp O              &td_MINUS_TILDE      &kp C_MUTE                 &kp LC(LS(TAB))  &kp K        &kp T            &lt 7 N            &lt_oh 11 S          &lt_oh 9 H
-&td_z          &td_x   &td_c   &td_v              &td_question         &none                      &kp LC(TAB)      &kp G        &mt RIGHT_WIN D  &mt RIGHT_SHIFT M  &mt RIGHT_ALT J  &mt RCTRL B
+&td_q           &td_l   &kp U   &td_comma_dot      &td_kakko_kagikakko                                              &kp F        &kp W            &kp R              &kp Y            &kp P
+&kp E          &kp I   &kp A   &kp O              &kp MINUS      &kp C_MUTE                 &kp LC(LS(TAB))  &kp K        &kp T            &lt 7 N            &lt_oh 11 S          &lt_oh 9 H
+&mt_td LCTRL Z          &td_x   &td_c   &td_v              &td_question         &kp LC(LA(LG(K)))                      &kp LC(TAB)      &kp G        &mt RIGHT_WIN D  &mt RIGHT_SHIFT M  &mt RIGHT_ALT J  &mt RCTRL B
 &kinkyu_taihi  &trans  &trans  &kp LC(BACKSPACE)  &lt_bs 2 BACKSPACE   &mt LEFT_SHIFT DELETE      &lt 4 ENTER      &lt 1 SPACE                                                       &kp ESCAPE
             >;
 
@@ -436,7 +432,7 @@
         SYMBOL {
             bindings = <
 &none     &none       &kp AMPERSAND  &none        &none                          &none                     &none          &kp CARET         &kp GRAVE                &none
-&kp HASH  &kp DOLLAR  &kp AT         &kp PERCENT  &kp UNDER  &none       &none   &td_slash_and_back_slash  &nami_kakko    &kp SLASH         &td_colon_and_semicolon  &td_quote_and_double_quote
+&kp HASH  &kp DOLLAR  &kp AT         &kp PERCENT  &kp TILDE  &none       &none   &td_slash_and_back_slash  &nami_kakko    &kp SLASH         &td_colon_and_semicolon  &td_quote_and_double_quote
 &none     &none       &none          &none        &none      &none       &none   &none                     &kp LESS_THAN  &kp GREATER_THAN  &kp PIPE                 &none
 &trans    &trans      &trans         &trans       &trans     &trans      &trans  &trans                                                                              &none
             >;
