@@ -1,24 +1,48 @@
 name: "Draw Keymap"
 
+# キーマップ(config/roBa.keymap)を保存するたびに、キー配置の図(keymap-drawer/roBa.png)を自動で作り直す。
+# 作った図はこのワークフローが自分でコミットする。GitHubの仕様で、この自動コミットではビルドは動かない。
 on:
   workflow_dispatch:
-  # push時に自動で実行する場合は、以下のコメントアウトを外す
-  # push:
-  #   paths:
-  #     - "config/roBa.keymap"
-  #     - "keymap_drawer.config.yaml"
-  #     - "config/roBa.dtsi"
+  push:
+    paths:
+      - "config/roBa.keymap"
+      - "tools/draw_keymap.py"
+
+concurrency:
+  group: draw-keymap
+  cancel-in-progress: true
 
 jobs:
   draw:
-    uses: caksoylar/keymap-drawer/.github/workflows/draw-zmk.yml@f9cf9d3677368a7fb1dc505c51b8156fafa66fe2
+    runs-on: ubuntu-24.04
     permissions:
       contents: write
-    with:
-      commit_message: "[Draw] ${{ github.event.head_commit.message || 'Update keymap drawing' }}"
-      amend_commit: false
-      keymap_patterns: "config/*.keymap"
-      json_path: "config"
-      config_path: "keymap_drawer.config.yaml" # config file, ignored if not exists
-      output_folder: "keymap-drawer"
-      destination: "both"
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y librsvg2-bin fonts-noto-cjk
+          pip install keymap-drawer==0.23.0 pillow
+
+      - name: Draw keymap image
+        run: python tools/draw_keymap.py
+
+      - name: Commit image
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add keymap-drawer/roBa.png
+          if git diff --cached --quiet; then
+            echo "図に変更なし"
+            exit 0
+          fi
+          git commit -m "[Draw] update keymap image [skip ci]"
+          git pull --rebase
+          git push
