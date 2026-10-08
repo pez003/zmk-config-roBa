@@ -12,9 +12,8 @@
 
 // 長押しキー(&lt)の誤爆対策：
 // 直前0.15秒以内に他のキーを押していたら（＝文字を打ってる途中なら）、長押しにせず普通の文字として扱う
-&lt {
-    require-prior-idle-ms = <150>;
-};
+
+&lt { require-prior-idle-ms = <150>; };
 
 // エンコーダー: 1周12カチッ → 1カチッ=1入力
 
@@ -31,6 +30,7 @@
     scroll-layers = <9>;
 
     // レイヤー13(SNIPE)の間はボールがゆっくり（速さは roBa_R.conf の SNIPE_CPI）
+
     snipe-layers = <13>;
 
     // レイヤー7(TB_window-control)中にボールを転がすとウィンドウ操作
@@ -70,6 +70,7 @@
 
         // 精密モード：S＋H を同時に押してる間だけボールがゆっくり
         // （文字を打ってる途中＝直前0.15秒以内にキーを押してた時は発動しない）
+
         snipe_sh {
             bindings = <&mo 13>;
             key-positions = <20 21>;
@@ -110,7 +111,7 @@
 
         LANG_1 {
             bindings = <&kp LANG1>;
-            key-positions = <19 41 18>;
+            key-positions = <19 12>;
             layers = <0>;
         };
 
@@ -137,7 +138,7 @@
 
         LEFT_HAND_TO_LAYER_0 {
             bindings = <&to 0>;
-            key-positions = <19 18 41>;
+            key-positions = <19 12>;
             layers = <6>;
         };
 
@@ -226,6 +227,7 @@
         // ZXCVのタップダンス用の「長押しで修飾キー」：
         // 文字を打ってる途中（直前0.15秒以内にキーを押してた時）は、待たずにすぐ「文字」に決める
         // → 「ざ」を速く打った時に「あz」と順番が入れ替わるのを防ぐ
+
         mt_td: mt_for_tapdance {
             compatible = "zmk,behavior-hold-tap";
             label = "MT_FOR_TAPDANCE";
@@ -239,6 +241,7 @@
 
         // S・H用の長押し：次に「左手」のキーを押した時（またはそのまま長押しした時）だけレイヤーにする
         // 右手で続けて打った時（sh、su など）は普通の文字になる
+
         lt_oh: lt_other_hand {
             compatible = "zmk,behavior-hold-tap";
             label = "LT_OTHER_HAND";
@@ -271,13 +274,14 @@
         };
 
         // エンコーダーでマウスカーソルを左右に動かす（1カチッごとに tap-ms の間だけ動く）
-
         // エンコーダーでカーソルを倍の量で左右に動かす（tap-ms を通常版の2倍に）
+
         encoder_mmv_left_right_x2: encoder_mmv_left_right_x2 {
             compatible = "zmk,behavior-sensor-rotate";
             label = "ENCODER_MMV_LEFT_RIGHT_X2";
             #sensor-binding-cells = <0>;
             bindings = <&mmv MOVE_RIGHT>, <&mmv MOVE_LEFT>;
+
             tap-ms = <60>;
         };
 
@@ -323,6 +327,7 @@
         };
 
         // Q：1回=q（長押しでbluetoothレイヤー）／2回=元に戻す(Ctrl+Z)
+
         td_q: td_q {
             compatible = "zmk,behavior-tap-dance";
             label = "TD_Q";
@@ -333,6 +338,7 @@
 
         // L：1回=l／2回=やり直し(Ctrl+Y)
         // 文字を打ってる途中で次のキーを押せば、待たずにすぐ l に決まる
+
         td_l: td_l {
             compatible = "zmk,behavior-tap-dance";
             label = "TD_L";
@@ -409,10 +415,10 @@
 
         default_layer {
             bindings = <
-&td_q           &td_l   &kp U   &td_comma_dot      &td_kakko_kagikakko                                              &kp F        &kp W            &kp R              &kp Y            &kp P
-&kp E          &kp I   &kp A   &kp O              &kp MINUS      &kp C_MUTE                 &kp LC(LS(TAB))  &kp K        &kp T            &lt 7 N            &lt_oh 11 S          &lt_oh 9 H
-&mt_td LCTRL Z          &td_x   &td_c   &td_v              &td_question         &kp LC(LA(LG(K)))                      &kp LC(TAB)      &kp G        &mt RIGHT_WIN D  &mt RIGHT_SHIFT M  &mt RIGHT_ALT J  &mt RCTRL B
-&kinkyu_taihi  &trans  &trans  &kp LC(BACKSPACE)  &lt_bs 2 BACKSPACE   &mt LEFT_SHIFT DELETE      &lt 4 ENTER      &lt 1 SPACE                                                       &kp ESCAPE
+&td_q           &td_l   &kp U   &td_question       &td_kakko_kagikakko                                              &kp F        &kp W            &kp R              &kp Y            &kp P
+&kp E           &kp I   &kp A   &kp O              &kp MINUS            &kp C_MUTE                 &kp LC(LS(TAB))  &kp K        &kp T            &lt 7 N            &lt_oh 11 S      &lt_oh 9 H
+&mt_td LCTRL Z  &td_x   &td_c   &td_v              &td_comma_dot        &kp LC(LA(LG(K)))          &kp LC(TAB)      &kp G        &mt RIGHT_WIN D  &mt RIGHT_SHIFT M  &mt RIGHT_ALT J  &mt RCTRL B
+&kinkyu_taihi   &trans  &trans  &kp LC(BACKSPACE)  &lt_bs 2 BACKSPACE   &mt LEFT_SHIFT DELETE      &lt 4 ENTER      &lt 1 SPACE                                                       &kp ESCAPE
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
@@ -467,10 +473,10 @@
 
         LEFT_HAND {
             bindings = <
-&kp ESC  &none  &kp M  &none  &kp LS(LC(TAB))  &none  &none  &none  &none  &none
-&mo 12  &lt 11 LEFT_ARROW  &lt 10 J  &lt 9 RIGHT_ARROW  &lt 8 LC(TAB)  &mkp MB1  &none  &none  &none  &none  &none  &none
-&none  &kp S  &kp R  &kp D  &none  &none  &none  &none  &none  &none  &none  &none
-&kinkyu_taihi  &none  &none  &none  &kp SPACE  &none  &none  &none  &kinkyu_taihi
+&kp ESC        &none              &kp M     &none              &kp LS(LC(TAB))                       &none  &none  &none  &none  &none
+&mo 12         &lt 11 LEFT_ARROW  &lt 10 J  &lt 9 RIGHT_ARROW  &lt 8 LC(TAB)    &mkp MB1      &none  &none  &none  &none  &none  &none
+&none          &kp S              &kp R     &kp D              &none            &none         &none  &none  &none  &none  &none  &none
+&kinkyu_taihi  &none              &none     &none              &kp SPACE        &none         &none  &none                       &kinkyu_taihi
             >;
 
             // 何も押してない時：カーソルを左右に移動（長押し中は上のレイヤーが優先される）
@@ -488,12 +494,13 @@
         };
 
         // 左手モード中の長押し（-）：カーソルを倍の量で左右移動／押し込み＝左クリック
+
         LH_MOVE_X2 {
             bindings = <
-&trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
-&trans &trans &trans &trans &trans &mkp LCLK &trans &trans &trans &trans &trans &trans
-&trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
-&trans &trans &trans &trans &trans &trans &trans &trans &trans
+&trans  &trans  &trans  &trans  &trans                         &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &mkp LCLK      &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans         &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans         &trans  &trans                          &trans
             >;
 
             sensor-bindings = <&encoder_mmv_left_right_x2>;
@@ -501,10 +508,10 @@
 
         TB_SCROLL_and_TAB {
             bindings = <
-&none  &none  &none  &none  &none  &none  &none  &none  &none  &none
-&none  &none  &none  &none  &none  &kp HOME  &none  &none  &kp HOME  &none  &none  &none
-&none  &none  &none  &none  &none  &kp END  &none  &none  &kp END  &none  &none  &none
-&none  &none  &none  &none  &none  &none  &none  &kp TAB  &none
+&none  &none  &none  &none  &none                       &none    &none     &none  &none  &none
+&none  &none  &none  &none  &none  &kp HOME      &none  &none    &kp HOME  &none  &none  &none
+&none  &none  &none  &none  &none  &kp END       &none  &none    &kp END   &none  &none  &none
+&none  &none  &none  &none  &none  &none         &none  &kp TAB                          &none
             >;
 
             sensor-bindings = <&encoder_msc_down_up>;
@@ -533,24 +540,26 @@
         };
 
         // 左手モード中の長押し（E）：音量／押し込み＝ミュート
+
         LH_VOLUME {
             bindings = <
-&trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
-&trans &trans &trans &trans &trans &kp C_MUTE &trans &trans &trans &trans &trans &trans
-&trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
-&trans &trans &trans &trans &trans &trans &trans &trans &trans
+&trans  &trans  &trans  &trans  &trans                          &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &kp C_MUTE      &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans                          &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
         };
 
         // 精密モード：S＋Hを同時に押してる間だけボールがゆっくり。T＝左クリック、N＝右クリック（T＋N同時押しの左クリックもそのまま使える）
+
         SNIPE {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &mkp LCLK  &mkp RCLK  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans                      &trans  &trans     &trans     &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp LCLK  &mkp RCLK  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans     &trans     &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                &trans
             >;
         };
     };
