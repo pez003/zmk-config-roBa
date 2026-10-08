@@ -415,9 +415,9 @@
 
         default_layer {
             bindings = <
-&td_q           &td_l   &kp U   &td_question       &td_kakko_kagikakko                                              &kp F        &kp W            &kp R              &kp Y            &kp P
+&td_q           &td_l   &kp U   &td_comma_dot      &td_kakko_kagikakko                                              &kp F        &kp W            &kp R              &kp Y            &kp P
 &kp E           &kp I   &kp A   &kp O              &kp MINUS            &kp C_MUTE                 &kp LC(LS(TAB))  &kp K        &kp T            &lt 7 N            &lt_oh 11 S      &lt_oh 9 H
-&mt_td LCTRL Z  &td_x   &td_c   &td_v              &td_comma_dot        &kp LC(LA(LG(K)))          &kp LC(TAB)      &kp G        &mt RIGHT_WIN D  &mt RIGHT_SHIFT M  &mt RIGHT_ALT J  &mt RCTRL B
+&mt_td LCTRL Z  &td_x   &td_c   &td_v              &td_question         &kp LC(LA(LG(K)))          &kp LC(TAB)      &kp G        &mt RIGHT_WIN D  &mt RIGHT_SHIFT M  &mt RIGHT_ALT J  &mt RCTRL B
 &kinkyu_taihi   &trans  &trans  &kp LC(BACKSPACE)  &lt_bs 2 BACKSPACE   &mt LEFT_SHIFT DELETE      &lt 4 ENTER      &lt 1 SPACE                                                       &kp ESCAPE
             >;
 
