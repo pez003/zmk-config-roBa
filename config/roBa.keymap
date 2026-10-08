@@ -152,6 +152,16 @@
             bindings = <&henkan_Secret>;
             key-positions = <2 1>;
         };
+
+        bluetooth-setting {
+            bindings = <&mo 5>;
+            key-positions = <0 1 2>;
+        };
+
+        reset-button {
+            bindings = <&sys_reset>;
+            key-positions = <3 4 5 6>;
+        };
     };
 
     macros {
@@ -333,7 +343,7 @@
             label = "TD_Q";
             #binding-cells = <0>;
             tapping-term-ms = <300>;  // 2回押しの受付時間（初期値200）。Qはほぼ打たないので長めでOK
-            bindings = <&lt 5 Q>, <&kp LC(Z)>;
+            bindings = <&kp Q>, <&kp LC(Z)>;
         };
 
         // L：1回=l／2回=やり直し(Ctrl+Y)
