@@ -111,13 +111,13 @@
 
         LANG_1 {
             bindings = <&kp LANG1>;
-            key-positions = <19 12>;
+            key-positions = <14 17>;
             layers = <0>;
         };
 
         LANG_2 {
             bindings = <&kp LANG2>;
-            key-positions = <20 11>;
+            key-positions = <29 26>;
             layers = <0>;
         };
 
