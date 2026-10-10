@@ -485,7 +485,7 @@
             bindings = <
 &kp ESC        &none              &kp M     &none              &kp LS(LC(TAB))                       &none  &none  &none  &none  &none
 &mo 12         &lt 11 LEFT_ARROW  &lt 10 J  &lt 9 RIGHT_ARROW  &lt 8 LC(TAB)    &mkp MB1      &none  &none  &none  &none  &none  &none
-&none          &kp S              &kp R     &kp D              &none            &none         &none  &none  &none  &none  &none  &none
+&none          &kp S              &kp R     &kp D              &kp LC(W)        &mkp MB1      &none  &none  &none  &none  &none  &none
 &kinkyu_taihi  &none              &none     &none              &kp SPACE        &none         &none  &none                       &kinkyu_taihi
             >;
 
